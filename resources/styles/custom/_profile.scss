@@ -1,0 +1,17 @@
+
+
+
+.profile-img{
+    max-width: 390px;
+    text-align: left;
+}
+
+@include media-breakpoint-down(sm) {
+    .profile-img {
+        text-align: center;
+
+        > img {
+            max-width: 60%;
+        }        
+    }
+}

@@ -1,0 +1,19 @@
+
+
+// Menu Vertial Pils
+
+.ep-menu.menu-pills  {
+    background-color: transparent !important;
+    border-right: 0 !important;
+    
+    .ep-menu-item {
+        height: 40px !important;
+        border-radius: 6px;
+    }
+
+    .ep-menu-item.is-active {
+        color: white;
+        font-weight: 600;
+        background: var(--ep-menu-active-color);
+    }
+}

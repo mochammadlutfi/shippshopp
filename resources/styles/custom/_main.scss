@@ -1,0 +1,242 @@
+//
+// Custom Main
+//
+// Add your own styles or override existing ones
+//
+// This file is included last, so you have access
+// to all Bootstrap and Codebase functions/mixins/styles etc
+// --------------------------------------------------
+
+// If you have many custom styles, you can create and import additional files
+// For example you can create _component1.scss and include it as follows:
+// @import 'component1';
+
+#page-container.landing .content-header{
+    height: 5.25rem !important;
+}
+
+.file-input[type=file] {
+    overflow: hidden;
+}
+
+.file-input {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 0.5625rem 0.75rem;
+    font-size: var(--ep-font-size-base);
+    font-weight: 400;
+    line-height: var(--ep-input-inner-height);
+    color: var(--ep-input-text-color, var(--ep-text-color-regular));
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1 solid #dcdfe6;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #dcdfe6 inset;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    appearance: none;
+}
+
+.file-input[type=file]::file-selector-button {
+    margin-right: 10px;
+    border: none;
+    padding : 0px 10px;
+    background: var(--ep-color-primary-dark-2);
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+  
+.file-input[type=file]::file-selector-button:hover {
+    background: var(--ep-color-primary-light-3);
+}
+
+.spacer {
+    height: 5px;
+    background: 0 0;
+}
+
+.c-pointer {
+    cursor: pointer !important;
+}
+
+*,*:focus,*:hover{
+    outline:none;
+}
+
+:root {
+    :focus-visible{
+        outline: none !important;
+    }
+    
+}
+.el-input__inner:focus {
+    outline: 0;
+    --tw-ring-shadow: none !important;
+}
+
+.dropdown-user {
+    min-width: 200px;
+}
+
+
+.dropdown-action {
+    min-width: 150px;
+}
+
+.text-pink {
+    color: #e02278;
+}
+
+.table-click  tbody  tr {
+    cursor : pointer;
+}
+
+
+
+.img-upload {
+	display: block;
+
+	.img-upload_wrapper {
+		position: relative;
+		display: flex;
+		-webkit-box-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		justify-content: center;
+		flex-shrink: 0;
+		font-size: 1.25rem;
+		line-height: 1;
+		overflow: hidden;
+		user-select: none;
+		border-radius: 8px;
+		color: rgba(76, 78, 100, 0.6);
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		border: 2px dashed rgba(76, 78, 100, 0.12);
+
+        :hover {
+            border: $primary;
+        }
+            
+        .img-upload-actions:hover {
+            opacity: 1;
+        }
+
+        .img-upload-actions {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            cursor: default;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            opacity: 0;
+            font-size: 20px;
+            background-color: var(--el-overlay-color-lighter);
+            transition: opacity var(--el-transition-duration);
+        }
+	}
+    
+	.img-upload_box {
+		width: 30px;
+		height: 30px;
+		display: flex;
+		border-radius: 8px;
+		-webkit-box-align: center;
+		align-items: center;
+		color: rgba(76, 78, 100, 0.54);
+		-webkit-box-pack: center;
+		justify-content: center;
+		background-color: rgba(109, 120, 141, 0.12);
+	}
+
+	input {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		opacity: 0;
+		cursor: pointer;
+	}
+
+	.btn-remove {
+		position: absolute;
+		padding: 0px 5px;
+		top: -8px;
+		right: 6px;
+		color: #6c757d;
+		background: red;
+		border: none;
+		cursor: pointer;
+		border-radius: 50%;
+		z-index: 2;
+	}
+}
+
+.block-tabs .ep-tabs__header{
+    
+  background-color: $white;
+  box-shadow: 0 1px 2px rgba(darken($body-bg-dark, 2.5%), .5), 0 1px 2px rgba(darken($body-bg-dark, 2.5%), .5);
+}
+
+
+.dark-mode {
+    .ep-button--primary.is-plain {
+        --ep-button-text-color : $white;
+        --ep-button-hover-text-color : #0a0f19;
+    }
+
+    a:not(.ep-button) {
+        color: var(--bs-link-color);
+        text-decoration: none;
+    }
+}
+
+.ep-button--primary,  .ep-button--primary.is-plain{
+    --ep-button-text-color : #0a0f19;
+    --ep-button-hover-text-color : #0a0f19;
+}
+a {
+    color: #0a0f19;
+    text-decoration: none;
+}
+// --ep-button-text-color : 'black';
+// :root{
+//     --ep-button-text-color : #
+// }
+
+.nav-main.nav-main-landing{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+
+    > .nav-main-item {
+        padding : 2px;
+
+        .nav-main-link {
+
+            &:hover,&.active{
+                border-radius : var(--bs-border-radius);
+                border:0;
+                background: #31373d;
+            }
+        }
+    }
+}
+
+.nav-tabs-capsule{
+    >.nav-item {
+        padding: .5rem;
+
+        .nav-link:hover,.nav-link.active{
+            background: #31373d;
+            border-radius: var(--bs-border-radius);
+        }
+    }
+}

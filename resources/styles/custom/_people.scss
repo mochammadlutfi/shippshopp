@@ -1,0 +1,172 @@
+.people-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .avatar{
+        img{
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .title{
+        margin-top: auto;
+        margin-bottom: auto;
+
+        h2 {
+            font-size: 1.275rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h5 {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .actions {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    @include media-breakpoint-down(md) {
+        .avatar img {
+            width: 100px !important;
+            height: 100px !important;
+        }
+        .title h2 {
+            font-size: 1rem;
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+
+.people-list li {
+	display: flex;
+	align-items: center;
+	background-color: $white;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	transition-duration: 300ms;
+	justify-content: space-between;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+
+	&:hover,
+	&:focus {
+		background-color: $gray-500;
+	}
+
+	.chat-options-btn {
+		line-height: 1;
+
+		.dropdown-toggle::before {
+			display: none;
+		}
+
+		.btn {
+			padding: 0 !important;
+			color: $text-muted;
+
+			&:focus {
+				box-shadow: none;
+			}
+		}
+
+		.dropdown-menu {
+			min-width: 6.5rem;
+			padding: .5rem .75rem;
+			border: 0;
+
+			li {
+				display: block;
+
+				&:hover,
+				&:focus {
+					background-color: $white;
+				}
+			}
+
+			a {
+				color: $primary;
+				display: flex;
+				align-items: center;
+				padding: .375rem 0;
+				font-size: 13px;
+
+				i {
+					margin-right: .25rem;
+					font-size: 1rem;
+					min-width: 1rem;
+				}
+
+				&:hover,
+				&:focus {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	a {
+		width: 94%;
+	}
+
+	.chat-user-thumbnail {
+		position: relative;
+		z-index: 1;
+		width: 2.25rem;
+		height: 2.25rem;
+		background-color: $gray-500;
+		border-radius: 50%;
+		flex: 0 0 2.25rem;
+
+        .img-circle {
+            width: 100%;
+            border-radius: 50% !important;
+        }
+
+		.active-status {
+			position: absolute;
+			width: .75rem;
+			height: .75rem;
+			border-radius: 50%;
+			bottom: 1px;
+			right: 0;
+			border: 2px solid $white;
+			background-color: $success;
+		}
+	}
+
+	.chat-user-info {
+		h6 {
+			font-size: 13px;
+			color: $text-muted;
+            font-weight: 700;
+		}
+
+		.people-address{
+            font-size: 9px;
+        }
+	}
+
+	&.chat-unread {
+		.chat-user-info {
+			.last-chat {
+				p {
+					color: $text-muted;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+
+	&.offline {
+		.chat-user-thumbnail {
+			.active-status {
+				background-color: $secondary;
+			}
+		}
+	}
+}
