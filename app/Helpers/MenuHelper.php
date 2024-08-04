@@ -52,30 +52,45 @@ class MenuHelper
         ]);
         
         $menuData->push([
-            "name" => 'Inventaris',
-            "icon" => 'fa fa-boxes-stacked',
-            "subActivePaths" => 'admin.inventory.*',
-            "sub" => [
-                [
-                    "name" => 'Produk',
-                    "to" => 'admin.inventory.product.index',
-                ],
-                [
-                    "name" => 'Kategori',
-                    "to" => 'admin.inventory.category.index',
-                ],
-                [
-                    "name" => 'Merk',
-                    "to" => 'admin.inventory.brand.index',
-                ],
-            ]
+            "icon" => "fa fa-boxes",
+            "name" => "Produk",
+            "to" => "admin.inventory.product.index",
         ]);
         $menuData->push([
+            "icon" => "fa fa-archive",
+            "name" => "Kategori",
+            "to" => "admin.inventory.category.index",
+        ]);
+        $menuData->push([
+            "icon" => "fa fa-star",
+            "name" => "Merk",
+            "to" => "admin.inventory.brand.index",
+        ]);
+        // $menuData->push([
+        //     "name" => 'Inventaris',
+        //     "icon" => 'fa fa-boxes-stacked',
+        //     "subActivePaths" => 'admin.inventory.*',
+        //     "sub" => [
+        //         [
+        //             "name" => 'Produk',
+        //             "to" => 'admin.inventory.product.index',
+        //         ],
+        //         [
+        //             "name" => 'Kategori',
+        //             "to" => 'admin.inventory.category.index',
+        //         ],
+        //         [
+        //             "name" => 'Merk',
+        //             "to" => 'admin.inventory.brand.index',
+        //         ],
+        //     ]
+        // ]);
+        $menuData->push([
             "icon" => "fa fa-user",
-            "name" => "Pengguna",
+            "name" => "Staff",
             "to" => "admin.user.index",
         ]);
-        }else if($level == 'Kasir 1'){
+        }else if($level == 'Gudang'){
             
             $menuData->push([
                 "icon" => "fa fa-home",

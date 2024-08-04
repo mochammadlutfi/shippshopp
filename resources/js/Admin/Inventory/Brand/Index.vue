@@ -183,7 +183,7 @@ export default {
             this.title = "Tambah Kontak";
             this.editMode = false;
             this.form.id = null;
-            this.form.name = null;
+            this.form.nama = null;
             this.form.phone = null;
             this.showForm = false;
         },
@@ -209,7 +209,7 @@ export default {
         edit(data){
             this.formTitle = 'Ubah Merk';
             this.form.id = data.id;
-            this.form.name = data.name;
+            this.form.nama = data.nama;
             this.editMode = true;
             this.showForm = true;
         },

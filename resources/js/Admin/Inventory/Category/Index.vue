@@ -78,8 +78,8 @@
         </div>
         <el-dialog v-model="showForm" :title="formTitle" width="30%" class="rounded-2" :before-close="onCloseForm" :close-on-click-modal="false">
             <el-form :model="form" label-position="top" v-loading="loadingForm" @submit.prevent="submit">
-                <el-form-item label="Nama Kategori" :error="errors.name">
-                    <el-input v-model="form.name" />
+                <el-form-item label="Nama Kategori" :error="errors.nama">
+                    <el-input v-model="form.nama" />
                 </el-form-item>
                 <div class="text-end">
                     <el-button @click="onCloseForm">
@@ -115,17 +115,17 @@ export default {
             isLoading : true,
             page : 1,
             pageSize : 0,
-            searchKey : 'name',
+            searchKey : 'nama',
             searchKeyword : '',
             limit : 25,
             total : 0,
             showForm : false,
-            sort : 'name',
+            sort : 'nama',
             sortDir : 'ASC',
             formTitle: "Tambah Kategori",
             form : {
                 id : null,
-                name : null,
+                nama : null,
             },
             editMode : false,
             loadingForm : false,
@@ -183,7 +183,7 @@ export default {
             this.title = "Tambah Kategori";
             this.editMode = false;
             this.form.id = null;
-            this.form.name = null;
+            this.form.nama = null;
             this.form.phone = null;
             this.showForm = false;
         },
@@ -209,7 +209,7 @@ export default {
         edit(data){
             this.formTitle = 'Ubah Kategori';
             this.form.id = data.id;
-            this.form.name = data.name;
+            this.form.nama = data.nama;
             this.editMode = true;
             this.showForm = true;
         },

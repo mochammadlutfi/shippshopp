@@ -192,12 +192,12 @@ class ProductController extends Controller
         try{
 
             $product = Product::where('id', $id)->first();
-            $variant = ProductVariant::where('product_id', $id)->latest()->get();
+            $variant = ProductImage::where('produk_id', $id)->latest()->get();
 
             foreach($variant as $v)
             {
-                if(Storage::disk('public')->exists($v->image)){
-                    Storage::disk('public')->delete($v->image);
+                if(Storage::disk('public')->exists($v->path)){
+                    Storage::disk('public')->delete($v->path);
                 }
                 $v->delete();
             }

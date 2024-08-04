@@ -149,23 +149,10 @@ export default {
             this.title = 'Ubah Supplier';
 
             this.form.id = this.data.id;
-            this.form.name = this.data.name;
-            this.form.pic = this.data.pic;
-            this.form.phone = this.data.phone;
+            this.form.name = this.data.nama;
+            this.form.phone = this.data.hp;
             this.form.email = this.data.email;
-            this.form.address = this.data.address;
-
-            
-            this.data.lines.forEach((v, i) => {
-                this.lines.push({
-                    'id' : v.id,
-                    'product' : v.product.name,
-                    'variant' : v.variant.name,
-                    'variant_id' : v.variant_id,
-                    'product_id' : v.product_id,
-                    'supplier_id' : v.supplier_id,
-                });
-            });
+            this.form.address = this.data.alamat;
         },  
     }
 }

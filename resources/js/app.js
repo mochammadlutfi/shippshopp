@@ -5,7 +5,6 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 // import { ZiggyVue } from 'ziggy';
 // import { Ziggy } from './ziggy';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
-import VueGoogleMaps from 'vue-google-maps-community-fork';
 import { createPinia } from 'pinia';
 const pinia = createPinia()
 

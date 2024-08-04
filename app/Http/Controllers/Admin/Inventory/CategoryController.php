@@ -31,11 +31,11 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required',
+            'nama' => 'required',
         ];
 
         $pesan = [
-            'name.required' => 'Nama Kategori Wajib Diisi!',
+            'nama.required' => 'Nama Kategori Wajib Diisi!',
         ];
 
         $validator = Validator::make($request->all(), $rules, $pesan);
@@ -45,7 +45,7 @@ class CategoryController extends Controller
             DB::beginTransaction();
             try{
                 $data = new ProductCategory();
-                $data->nama = $request->name;
+                $data->nama = $request->nama;
                 $data->save();
 
             }catch(\QueryException $e){
@@ -68,11 +68,11 @@ class CategoryController extends Controller
     {
         {
             $rules = [
-                'name' => 'required',
+                'nama' => 'required',
             ];
     
             $pesan = [
-                'name.required' => 'Nama Kategori Wajib Diisi!',
+                'nama.required' => 'Nama Kategori Wajib Diisi!',
             ];
     
             $validator = Validator::make($request->all(), $rules, $pesan);
@@ -82,7 +82,7 @@ class CategoryController extends Controller
                 DB::beginTransaction();
                 try{
                     $data = ProductCategory::where('id', $id)->first();
-                    $data->nama = $request->name;
+                    $data->nama = $request->nama;
                     $data->save();
     
                 }catch(\QueryException $e){

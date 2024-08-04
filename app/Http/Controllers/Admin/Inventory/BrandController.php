@@ -31,26 +31,27 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required',
+            'nama' => 'required',
         ];
 
         $pesan = [
-            'name.required' => 'Nama Merk Wajib Diisi!',
+            'nama.required' => 'Nama Merk Wajib Diisi!',
         ];
 
         $validator = Validator::make($request->all(), $rules, $pesan);
         if ($validator->fails()){
+            dd($validator->errors());
             return back()->withErrors($validator->errors());
         }else{
             DB::beginTransaction();
             try{
                 $data = new Brand();
-                $data->name = $request->name;
+                $data->nama = $request->nama;
                 $data->save();
 
             }catch(\QueryException $e){
                 DB::rollback();
-                return back();
+                dd($e);
             }
             DB::commit();
             return redirect()->route('admin.inventory.brand.index');
@@ -68,11 +69,11 @@ class BrandController extends Controller
     {
         {
             $rules = [
-                'name' => 'required',
+                'nama' => 'required',
             ];
     
             $pesan = [
-                'name.required' => 'Nama Merk Wajib Diisi!',
+                'nama.required' => 'Nama Merk Wajib Diisi!',
             ];
     
             $validator = Validator::make($request->all(), $rules, $pesan);
@@ -82,7 +83,7 @@ class BrandController extends Controller
                 DB::beginTransaction();
                 try{
                     $data = Brand::where('id', $id)->first();
-                    $data->name = $request->name;
+                    $data->nama = $request->nama;
                     $data->save();
     
                 }catch(\QueryException $e){

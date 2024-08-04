@@ -36,7 +36,7 @@
                 </div>
                 <div class="block-content p-0">
                     <el-table :data="data" class="w-100" @sort-change="sortChange" header-cell-class-name="bg-primary text-dark">
-                        <el-table-column type="index"  :index="indexMethod" width="100" />
+                        <el-table-column type="index" width="100" />
                         <el-table-column prop="nama" label="Nama" sortable/>
                         <el-table-column prop="hp" label="No HP" sortable/>
                         <el-table-column prop="email" label="Email" sortable/>

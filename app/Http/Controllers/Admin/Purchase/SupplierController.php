@@ -69,20 +69,11 @@ class SupplierController extends Controller
             DB::beginTransaction();
             try{
                     $data = new Supplier();
-                    $data->name = $request->name;
+                    $data->nama = $request->name;
                     $data->email = $request->email;
-                    $data->phone = $request->phone;
-                    $data->pic = $request->pic;
-                    $data->address = $request->address;
+                    $data->hp = $request->phone;
+                    $data->alamat = $request->address;
                     $data->save();
-
-                    
-                foreach($request->lines as $i){
-                    $line = new SupplierProduct();
-                    $line->product_id = $i['product_id'];
-                    $line->variant_id = $i['variant_id'];
-                    $data->product()->save($line);
-                }
 
             }catch(\QueryException $e){
                 DB::rollback();
@@ -112,9 +103,6 @@ class SupplierController extends Controller
     public function edit($id)
     {
         $data = Supplier::where('id', $id)->first();
-
-        $data->lines = SupplierProduct::with(['product', 'variant'])
-        ->where('supplier_id', $data->id)->get();
 
         return Inertia::render('Purchase/Supplier/Form',[
             'data' => $data,
@@ -149,28 +137,11 @@ class SupplierController extends Controller
             DB::beginTransaction();
             try{
                     $data = Supplier::where('id', $id)->first();
-                    $data->name = $request->name;
+                    $data->nama = $request->name;
                     $data->email = $request->email;
-                    $data->phone = $request->phone;
-                    $data->pic = $request->pic;
-                    $data->address = $request->address;
+                    $data->hp = $request->phone;
+                    $data->alamat = $request->address;
                     $data->save();
-
-                    
-                foreach($request->lines as $i){
-                    if(array_key_exists("id", $i)){
-                        $line_id = $i['id'];
-                    }else{
-                        $line_id = null;
-                    }
-
-                    $line = SupplierProduct::firstOrNew(['id' =>  $line_id]);
-                    $line->product_id = $i['product_id'];
-                    $line->variant_id = $i['variant_id'];
-                    $line->supplier_id = $data->id;
-                    $data->product()->save($line);
-                }
-                $remove = SupplierProduct::where('supplier_id', $data->id)->whereIn('id', $request->lines_deleted)->delete();
 
 
             }catch(\QueryException $e){
@@ -201,18 +172,6 @@ class SupplierController extends Controller
         }
         DB::commit();
         return redirect()->route('admin.purchase.supplier.index');
-    }
-
-    public function product(Request $request)
-    {
-
-        $data = Supplier::where('id', $request->id)->first();
-        $data->lines = SupplierProduct::with(['product', 'variant' => function($q){
-            return $q->with('purchase_unit')->where('stock', '<', 20);
-        }])
-        ->where('supplier_id', $data->id)->get();
-        
-        return response()->json($data);
     }
 
     public function data(Request $request)
