@@ -182,13 +182,33 @@ export default {
         },
          selectProduct(data)
         {
-            if(this.lines.length >= 1){
+            if(this.lines.length){
                 if(this.lines.some(detail => detail.product_id === data.id)){
                     for (var i = 0; i < this.lines.length; i++) {
                         if (this.lines[i].product_id === data.id) {
                             this.lines[i].qty++;
+                        }else{
+                            this.lines.push({
+                                id : null,
+                                product_id : data.id,
+                                stock : data.stok,
+                                product : data.nama,
+                                sku : data.sku,
+                                qty : 1,
+                                price : data.harga_beli
+                            });
                         }
                     }
+                }else{
+                    this.lines.push({
+                        id : null,
+                        product_id : data.id,
+                        stock : data.stok,
+                        product : data.nama,
+                        sku : data.sku,
+                        qty : 1,
+                        price : data.harga_beli
+                    });
                 }
             }else{
                 this.lines.push({
