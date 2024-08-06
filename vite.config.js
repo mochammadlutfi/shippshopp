@@ -6,15 +6,15 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
-    // server: {
-    //   hmr: {
-    //     host: 'kombet.local',
-    //   },
-    //   https: {
-    //       key: 'D:/laragon/etc/ssl/laragon.key',
-    //       cert: 'D:/laragon/etc/ssl/laragon.crt',
-    //   },
-    // },
+    server: {
+      hmr: {
+        host: 'kombet.local',
+      },
+      https: {
+          key: 'D:/laragon/etc/ssl/laragon.key',
+          cert: 'D:/laragon/etc/ssl/laragon.crt',
+      },
+    },
     resolve: {
       alias: {
         ziggy: 'vendor/tightenco/ziggy/dist/vue.es.js',

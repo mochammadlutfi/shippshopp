@@ -6,15 +6,21 @@
                 <div class="my-auto">
                     Detail Pesanan Pembelian
                 </div>
-                <div class="float-end" v-if="data.state == 'draft'">
-                    <el-button type="primary" @click.prevent="modalConfirm = true;">
+                <div class="float-end">
+                    <el-button type="primary" @click.prevent="updateState('done')" v-if="data.state == 'pending'">
                         <i class="fa fa-check me-2"></i>
-                        Konfirmasi
+                        Terima Barang
+                    </el-button>
+                    <template v-if="data.state == 'draft'">
+                    <el-button type="primary" @click.prevent="updateState('pending')">
+                        <i class="fa fa-check me-2"></i>
+                        Seuju
                     </el-button>
                     <el-button type="primary" plain @click.prevent="updateState('cancel')">
                         <i class="fa fa-close me-2"></i>
                         Batal
                     </el-button>
+                    </template>
                 </div>
             </div>
 
@@ -24,16 +30,10 @@
 
                     <el-descriptions column="2">
                         <el-descriptions-item label="Supplier">
-                            {{ data.supplier.name }}
-                        </el-descriptions-item>
-                        <el-descriptions-item label="Sales">
-                            {{ data.supplier.pic }}
+                            {{ data.supplier.nama }}
                         </el-descriptions-item>
                         <el-descriptions-item label="No Handphone">
-                            {{ data.supplier.phone }}
-                        </el-descriptions-item>
-                        <el-descriptions-item label="No Faktur Supplier" v-if="data.state == 'done'">
-                            {{ data.ref }}
+                            {{ data.supplier.hp }}
                         </el-descriptions-item>
                         <el-descriptions-item label="Tanggal Pembelian">
                             {{ formatDate(data.date) }}
@@ -47,10 +47,7 @@
                     <el-table :data="data.lines" border id="variant" class="mb-2">
                         <el-table-column label="Produk">
                             <template #default="scope">
-                                <div>{{ scope.row.product.name }}
-                                    <template v-if="scope.row.variant.name">
-                                        - {{ scope.row.variant.name }}
-                                    </template>
+                                <div>{{ scope.row.product.nama }}
                                 </div>
                             </template>
                         </el-table-column>
@@ -59,18 +56,7 @@
                                 {{ currency(scope.row.price) }}
                             </template>
                         </el-table-column>
-                        <el-table-column label="Stok">
-                            <template #default="scope">
-                                {{ scope.row.variant.stock }}
-                            </template>
-                        </el-table-column>
                         <el-table-column prop="qty" label="Qty Dipesan"/>
-                        <el-table-column prop="qty_receipt" label="Qty Diterima"/>
-                        <el-table-column label="Satuan">
-                            <template #default="scope">
-                                {{ scope.row.unit.name }} ({{ scope.row.unit.code }})
-                            </template>
-                        </el-table-column>
                         <el-table-column label="Total">
                             <template #default="scope">
                                 {{ currency(scope.row.subtotal) }}
@@ -119,11 +105,6 @@
                                     - {{ scope.row.variant }}
                                 </template>
                             </div>
-                        </template>
-                    </el-table-column>
-                    <el-table-column label="Stok" width="62">
-                        <template #default="scope">
-                            {{ scope.row.stock }}
                         </template>
                     </el-table-column>
                     <el-table-column label="Harga Beli" width="150">
@@ -197,17 +178,11 @@ export default {
             this.data.lines.forEach((v, i) => {
                 this.lines.push({
                     'id' : v.id,
-                    'product' : v.product.name,
-                    'variant' : v.variant.name,
-                    'variant_id' : v.variant_id,
+                    'product' : v.product.nama,
                     'product_id' : v.product_id,
                     'price' : v.price,
                     'qty' : v.qty,
-                    'stock' :  v.variant.stock,
                     'qty_receipt' : v.qty,
-                    'unit_id' : v.unit_id,
-                    'unit' : v.unit.name,
-                    'unit_code' : v.unit.code,
                     'subtotal' : v.subtotal,
                 });
             });
@@ -237,7 +212,15 @@ export default {
             });
         },
         updateState(state){
-            let msg = (state == 'done') ? 'Konfirmasi Status Pembelian!' : 'Batalkan Pembelian?';
+            // let msg = (state == 'done') ? 'Konfirmasi Status Pembelian!' : 'Batalkan Pembelian?';
+            let msg ='';
+            if(state == 'pending'){
+                msg = 'Setuju Pengajuan Pembelian ?';
+            }else if(state == 'done'){
+                msg = 'Terima Barang Pembelian ?';
+            }else{
+                msg = 'Tolak Pengajuan Pembelian?'
+            }
             ElMessageBox.alert(msg, 'Peringatan', {
                 showCancelButton: true,
                 confirmButtonText: 'Ya!',

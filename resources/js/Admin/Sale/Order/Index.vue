@@ -17,31 +17,31 @@
                         <a class="nav-link" v-bind:class="{ 'active' : (status == 'pending') ? true : false }"
                             :href="route('admin.sale.order.index', { status : 'pending' })">
                             Pending
-                            <el-tag type="primary" round>{{ counter.pending }}</el-tag>
+                            <el-tag type="primary" round :class="{ 'ep-tag--dark' : (status == 'pending') ? true : false }">{{ counter.pending }}</el-tag>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" v-bind:class="{ 'active' : (status == 'process') ? true : false }"
                             :href="route('admin.sale.order.index', { status : 'process' })">Diproses
-                            <el-tag type="primary" round>{{ counter.process }}</el-tag>
+                            <el-tag type="primary" round :class="{ 'ep-tag--dark' : (status == 'process') ? true : false }">{{ counter.process }}</el-tag>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" v-bind:class="{ 'active' : (status == 'shipped') ? true : false }"
                             :href="route('admin.sale.order.index', { status : 'shipped' })">Dikirim
-                            <el-tag type="primary" round>{{ counter.shipped }}</el-tag>
+                            <el-tag type="primary" round :class="{ 'ep-tag--dark' : (status == 'shipped') ? true : false }">{{ counter.shipped }}</el-tag>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" v-bind:class="{ 'active' :  (status == 'done') ? true : false }"
                             :href="route('admin.sale.order.index', { status : 'done' })">Selesai
-                            <el-tag type="primary" round>{{ counter.done }}</el-tag>
+                            <el-tag type="primary" round :class="{ 'ep-tag--dark' : (status == 'done') ? true : false }">{{ counter.done }}</el-tag>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" v-bind:class="{ 'active' :  (status == 'cancel') ? true : false }"
                             :href="route('admin.sale.order.index', { status : 'cancel' })">Dibatalkan
-                            <el-tag type="primary" round>{{ counter.cancel }}</el-tag>
+                            <el-tag type="primary" round :class="{ 'ep-tag--dark' : (status == 'cancel') ? true : false }">{{ counter.cancel }}</el-tag>
                         </a>
                     </li>
                 </ul>

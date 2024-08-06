@@ -50,6 +50,9 @@
                                 <el-tag type="warning" v-if="scope.row.state == 'draft'">
                                     Draft
                                 </el-tag>
+                                <el-tag type="info" v-else-if="scope.row.state == 'pending'">
+                                    Pending
+                                </el-tag>
                                 <el-tag type="success" v-else-if="scope.row.state == 'done'">
                                     Selesai
                                 </el-tag>

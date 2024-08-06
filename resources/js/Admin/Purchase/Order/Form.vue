@@ -54,6 +54,7 @@
                                 </span>
                             </template>
                         </el-autocomplete>
+
                         <el-table :data="lines" border class="mb-4" id="variant">
                             <el-table-column label="Produk">
                                 <template #default="scope">
@@ -188,20 +189,19 @@ export default {
                             this.lines[i].qty++;
                         }
                     }
-                } else {
-                    console.log(data);
-                    this.lines.push({
-                        id : null,
-                        product_id : data.id,
-                        stock : data.stok,
-                        product : data.nama,
-                        sku : data.sku,
-                        qty : 1,
-                        price : data.harga_beli
-                    });
                 }
             }else{
+                this.lines.push({
+                    id : null,
+                    product_id : data.id,
+                    stock : data.stok,
+                    product : data.nama,
+                    sku : data.sku,
+                    qty : 1,
+                    price : data.harga_beli
+                });
             }
+            
             this.calculateTotal();
             this.$forceUpdate();
         },

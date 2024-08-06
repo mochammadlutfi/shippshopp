@@ -85,9 +85,7 @@ class OrderController extends Controller
                 foreach($request->lines as $i){
                     $line = new PurchaseOrderLine();
                     $line->product_id = $i['product_id'];
-                    $line->variant_id = $i['variant_id'];
                     $line->price = $i['price'];
-                    $line->unit_id = $i['unit_id'];
                     $line->qty = $i['qty'];
                     $line->subtotal = $i['subtotal'];
                     $data->lines()->save($line);
@@ -110,9 +108,7 @@ class OrderController extends Controller
     public function edit($id)
     {
         $data = PurchaseOrder::with(['lines' => function($q){
-            $q->with(['product:id,name', 'variant' => function($q){
-                return $q->with('purchase_unit');
-            }, 'unit:id,name,code']);
+            $q->with(['product']);
         }, 'supplier'])
         ->where('id', $id)->first();
 
@@ -188,7 +184,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $data = PurchaseOrder::with(['lines' => function($q){
-            $q->with(['product:id,name', 'variant', 'unit:id,name,code']);
+            $q->with(['product']);
         }, 'supplier'])
         ->where('id', $id)->first();
 
@@ -328,28 +324,7 @@ class OrderController extends Controller
         try{
             $data = PurchaseOrder::with(['lines'])->where('id', $id)->first();
             $data->state = $request->state;
-            $data->date_received = $request->date;
-            $data->ref = $request->ref;
-            $data->save();
-            $total = 0;
-            if($request->state == 'done')
-            {
-                foreach($request->lines as $line){
-                    $subtotal = $line['price'] * $line['qty_receipt'];
-                    $ls = PurchaseOrderLine::where('id', $line['id'])->first();
-                    $ls->price = $line['price'];
-                    $ls->qty_receipt =  $line['qty_receipt'];
-                    $ls->subtotal = $subtotal;
-                    $ls->save();
-
-                    $total += $subtotal;
-
-                    $s = ProductVariant::where('id', $line['variant_id'])->first();
-                    $s->stock += $line['qty_receipt'];
-                    $s->save();
-                }
-            }
-            $data->total = $total;
+            $data->date_received = Carbon::today();
             $data->save();
 
         }catch(\QueryException $e){
