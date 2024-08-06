@@ -1,0 +1,1376 @@
+{
+  "__Uint8Array.js": {
+    "file": "assets/_Uint8Array.js",
+    "imports": [
+      "_id.js"
+    ]
+  },
+  "__initCloneObject.js": {
+    "file": "assets/_initCloneObject.js",
+    "imports": [
+      "_id.js",
+      "__Uint8Array.js"
+    ]
+  },
+  "_debounce.js": {
+    "file": "assets/debounce.js",
+    "imports": [
+      "_id.js"
+    ]
+  },
+  "_directive.js": {
+    "file": "assets/directive.js",
+    "imports": [
+      "_id.js"
+    ]
+  },
+  "_event.js": {
+    "file": "assets/event.js"
+  },
+  "_id.js": {
+    "file": "assets/id.js"
+  },
+  "_index20.js": {
+    "file": "assets/index20.js",
+    "imports": [
+      "_id.js",
+      "_index7.js",
+      "_typescript.js"
+    ]
+  },
+  "_index21.js": {
+    "file": "assets/index21.js",
+    "imports": [
+      "_id.js",
+      "_typescript.js",
+      "_event.js"
+    ]
+  },
+  "_index22.js": {
+    "file": "assets/index22.js",
+    "imports": [
+      "_id.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ]
+  },
+  "_index23.js": {
+    "file": "assets/index23.js",
+    "imports": [
+      "_id.js",
+      "_event.js",
+      "_isEqual.js"
+    ]
+  },
+  "_index24.js": {
+    "file": "assets/index24.js",
+    "imports": [
+      "_id.js",
+      "_index21.js",
+      "_event.js",
+      "_index25.js"
+    ]
+  },
+  "_index25.js": {
+    "file": "assets/index25.js",
+    "imports": [
+      "_id.js"
+    ]
+  },
+  "_index26.js": {
+    "file": "assets/index26.js",
+    "imports": [
+      "_id.js",
+      "_index27.js",
+      "_event.js"
+    ]
+  },
+  "_index27.js": {
+    "file": "assets/index27.js",
+    "imports": [
+      "_id.js",
+      "_scroll.js"
+    ]
+  },
+  "_index28.js": {
+    "file": "assets/index28.js",
+    "imports": [
+      "_id.js",
+      "_event.js"
+    ]
+  },
+  "_index29.js": {
+    "file": "assets/index29.js",
+    "imports": [
+      "_id.js",
+      "_index21.js",
+      "_index27.js"
+    ]
+  },
+  "_index30.js": {
+    "file": "assets/index30.js",
+    "imports": [
+      "_id.js"
+    ]
+  },
+  "_index31.js": {
+    "file": "assets/index31.js",
+    "imports": [
+      "_id.js",
+      "_index33.js",
+      "__Uint8Array.js",
+      "_debounce.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ]
+  },
+  "_index32.js": {
+    "file": "assets/index32.js",
+    "imports": [
+      "_id.js",
+      "_index21.js",
+      "_index30.js",
+      "_isEqual.js",
+      "_event.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js"
+    ]
+  },
+  "_index33.js": {
+    "file": "assets/index33.js",
+    "imports": [
+      "__Uint8Array.js",
+      "_isEqual.js",
+      "_id.js"
+    ]
+  },
+  "_index34.js": {
+    "file": "assets/index34.js",
+    "imports": [
+      "_id.js",
+      "_index32.js",
+      "_typescript.js",
+      "_isEqual.js",
+      "_index21.js"
+    ]
+  },
+  "_index35.js": {
+    "file": "assets/index35.js",
+    "imports": [
+      "_id.js",
+      "_index21.js",
+      "_index25.js",
+      "_debounce.js",
+      "_index33.js",
+      "_isEqual.js"
+    ]
+  },
+  "_index36.js": {
+    "file": "assets/index36.js",
+    "imports": [
+      "_id.js",
+      "_index21.js",
+      "_event.js",
+      "_debounce.js"
+    ]
+  },
+  "_index7.js": {
+    "file": "assets/index7.js",
+    "imports": [
+      "_id.js"
+    ]
+  },
+  "_index8.js": {
+    "file": "assets/index8.js",
+    "imports": [
+      "_id.js",
+      "_typescript.js"
+    ]
+  },
+  "_isEqual.js": {
+    "file": "assets/isEqual.js",
+    "imports": [
+      "__Uint8Array.js",
+      "_id.js"
+    ]
+  },
+  "_moment.js": {
+    "file": "assets/moment.js"
+  },
+  "_scroll.js": {
+    "file": "assets/scroll.js",
+    "imports": [
+      "_id.js"
+    ]
+  },
+  "_typescript.js": {
+    "file": "assets/typescript.js"
+  },
+  "resources/fonts/fontawesome/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-4002.css",
+    "src": "resources/fonts/fontawesome/fa-brands-400.ttf"
+  },
+  "resources/fonts/fontawesome/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400.css",
+    "src": "resources/fonts/fontawesome/fa-brands-400.woff2"
+  },
+  "resources/fonts/fontawesome/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-4002.css",
+    "src": "resources/fonts/fontawesome/fa-regular-400.ttf"
+  },
+  "resources/fonts/fontawesome/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400.css",
+    "src": "resources/fonts/fontawesome/fa-regular-400.woff2"
+  },
+  "resources/fonts/fontawesome/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-9002.css",
+    "src": "resources/fonts/fontawesome/fa-solid-900.ttf"
+  },
+  "resources/fonts/fontawesome/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900.css",
+    "src": "resources/fonts/fontawesome/fa-solid-900.woff2"
+  },
+  "resources/fonts/simple-line-icons/Simple-Line-Icons.eot": {
+    "file": "assets/Simple-Line-Icons.css",
+    "src": "resources/fonts/simple-line-icons/Simple-Line-Icons.eot"
+  },
+  "resources/fonts/simple-line-icons/Simple-Line-Icons.svg": {
+    "file": "assets/Simple-Line-Icons5.css",
+    "src": "resources/fonts/simple-line-icons/Simple-Line-Icons.svg"
+  },
+  "resources/fonts/simple-line-icons/Simple-Line-Icons.ttf": {
+    "file": "assets/Simple-Line-Icons3.css",
+    "src": "resources/fonts/simple-line-icons/Simple-Line-Icons.ttf"
+  },
+  "resources/fonts/simple-line-icons/Simple-Line-Icons.woff": {
+    "file": "assets/Simple-Line-Icons4.css",
+    "src": "resources/fonts/simple-line-icons/Simple-Line-Icons.woff"
+  },
+  "resources/fonts/simple-line-icons/Simple-Line-Icons.woff2": {
+    "file": "assets/Simple-Line-Icons2.css",
+    "src": "resources/fonts/simple-line-icons/Simple-Line-Icons.woff2"
+  },
+  "resources/js/Admin/Auth/Login.vue": {
+    "file": "assets/Login2.js",
+    "imports": [
+      "_id.js",
+      "_index8.js",
+      "_index21.js",
+      "_index22.js",
+      "_typescript.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Auth/Login.vue"
+  },
+  "resources/js/Admin/Dashboard/Index.vue": {
+    "file": "assets/Index9.js",
+    "imports": [
+      "_id.js",
+      "_index8.js",
+      "_index31.js",
+      "_index30.js",
+      "_typescript.js",
+      "_index33.js",
+      "__Uint8Array.js",
+      "_isEqual.js",
+      "_debounce.js",
+      "_index23.js",
+      "_event.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Dashboard/Index.vue"
+  },
+  "resources/js/Admin/Inventory/Brand/BrandSelect.vue": {
+    "file": "assets/BrandSelect.js",
+    "imports": [
+      "_id.js",
+      "_index32.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Inventory/Brand/BrandSelect.vue"
+  },
+  "resources/js/Admin/Inventory/Brand/Index.vue": {
+    "file": "assets/Index10.js",
+    "imports": [
+      "resources/js/Admin/Inventory/Unit/UnitSelect.vue",
+      "_moment.js",
+      "_id.js",
+      "_index20.js",
+      "_index29.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index34.js",
+      "_index22.js",
+      "_index26.js",
+      "_directive.js",
+      "_index7.js",
+      "_typescript.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_event.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Inventory/Brand/Index.vue"
+  },
+  "resources/js/Admin/Inventory/Category/CategorySelect.vue": {
+    "file": "assets/CategorySelect.js",
+    "imports": [
+      "_id.js",
+      "_index32.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Inventory/Category/CategorySelect.vue"
+  },
+  "resources/js/Admin/Inventory/Category/Index.vue": {
+    "file": "assets/Index11.js",
+    "imports": [
+      "resources/js/Admin/Inventory/Unit/UnitSelect.vue",
+      "_moment.js",
+      "_id.js",
+      "_index20.js",
+      "_index29.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index34.js",
+      "_index22.js",
+      "_index26.js",
+      "_directive.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index7.js",
+      "_index27.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Inventory/Category/Index.vue"
+  },
+  "resources/js/Admin/Inventory/Product/Form.css": {
+    "file": "assets/Form.css",
+    "src": "resources/js/Admin/Inventory/Product/Form.css"
+  },
+  "resources/js/Admin/Inventory/Product/Form.vue": {
+    "css": [
+      "assets/Form.css"
+    ],
+    "file": "assets/Form3.js",
+    "imports": [
+      "_id.js",
+      "resources/js/Admin/Inventory/Category/CategorySelect.vue",
+      "resources/js/Admin/Inventory/Brand/BrandSelect.vue",
+      "_index20.js",
+      "_index21.js",
+      "_index22.js",
+      "_index8.js",
+      "_typescript.js",
+      "_isEqual.js",
+      "_directive.js",
+      "_index32.js",
+      "_index30.js",
+      "_event.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js",
+      "__Uint8Array.js",
+      "_index7.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Inventory/Product/Form.vue"
+  },
+  "resources/js/Admin/Inventory/Product/Index.vue": {
+    "file": "assets/Index12.js",
+    "imports": [
+      "_id.js",
+      "_index29.js",
+      "_index20.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index34.js",
+      "_directive.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js",
+      "_typescript.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_event.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Inventory/Product/Index.vue"
+  },
+  "resources/js/Admin/Inventory/Unit/Index.vue": {
+    "file": "assets/Index13.js",
+    "imports": [
+      "resources/js/Admin/Inventory/Unit/UnitSelect.vue",
+      "_moment.js",
+      "_id.js",
+      "_index20.js",
+      "_index29.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index34.js",
+      "_index22.js",
+      "_index26.js",
+      "_directive.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index7.js",
+      "_index27.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Inventory/Unit/Index.vue"
+  },
+  "resources/js/Admin/Inventory/Unit/UnitSelect.vue": {
+    "file": "assets/UnitSelect.js",
+    "imports": [
+      "_id.js",
+      "_index32.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Inventory/Unit/UnitSelect.vue"
+  },
+  "resources/js/Admin/Purchase/Order/Form.vue": {
+    "file": "assets/Form4.js",
+    "imports": [
+      "resources/js/Admin/Purchase/Supplier/SupplierSelect.vue",
+      "_moment.js",
+      "_id.js",
+      "_index20.js",
+      "_index22.js",
+      "_index8.js",
+      "_index35.js",
+      "_index36.js",
+      "_index31.js",
+      "_index24.js",
+      "_index32.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index7.js",
+      "__initCloneObject.js",
+      "_index25.js",
+      "_index23.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Purchase/Order/Form.vue"
+  },
+  "resources/js/Admin/Purchase/Order/Index.vue": {
+    "file": "assets/Index14.js",
+    "imports": [
+      "_id.js",
+      "_index29.js",
+      "_index20.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index30.js",
+      "_index34.js",
+      "_index22.js",
+      "_index35.js",
+      "_index26.js",
+      "_directive.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js",
+      "_typescript.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_event.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index23.js",
+      "__initCloneObject.js",
+      "_index25.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Purchase/Order/Index.vue"
+  },
+  "resources/js/Admin/Purchase/Order/Show.vue": {
+    "file": "assets/Show4.js",
+    "imports": [
+      "_moment.js",
+      "_id.js",
+      "_index20.js",
+      "_index29.js",
+      "_index27.js",
+      "_index31.js",
+      "_index8.js",
+      "_index21.js",
+      "_index22.js",
+      "_index35.js",
+      "_index24.js",
+      "_index26.js",
+      "_index7.js",
+      "_typescript.js",
+      "_scroll.js",
+      "_index33.js",
+      "__Uint8Array.js",
+      "_isEqual.js",
+      "_debounce.js",
+      "_index23.js",
+      "_event.js",
+      "__initCloneObject.js",
+      "_index25.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Purchase/Order/Show.vue"
+  },
+  "resources/js/Admin/Purchase/Supplier/Form.vue": {
+    "file": "assets/Form5.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index21.js",
+      "_index22.js",
+      "_index8.js",
+      "_directive.js",
+      "_index7.js",
+      "_typescript.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Purchase/Supplier/Form.vue"
+  },
+  "resources/js/Admin/Purchase/Supplier/Index.vue": {
+    "file": "assets/Index15.js",
+    "imports": [
+      "_id.js",
+      "_moment.js",
+      "_index29.js",
+      "_index20.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index34.js",
+      "_directive.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js",
+      "_typescript.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_event.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Purchase/Supplier/Index.vue"
+  },
+  "resources/js/Admin/Purchase/Supplier/SupplierSelect.vue": {
+    "file": "assets/SupplierSelect.js",
+    "imports": [
+      "_id.js",
+      "_index32.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Purchase/Supplier/SupplierSelect.vue"
+  },
+  "resources/js/Admin/Sale/Customer/CustomerSelect.vue": {
+    "file": "assets/CustomerSelect.js",
+    "imports": [
+      "_id.js",
+      "_index32.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Sale/Customer/CustomerSelect.vue"
+  },
+  "resources/js/Admin/Sale/Customer/Form.vue": {
+    "file": "assets/Form6.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index21.js",
+      "_index22.js",
+      "_index8.js",
+      "_index7.js",
+      "_typescript.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Sale/Customer/Form.vue"
+  },
+  "resources/js/Admin/Sale/Customer/Index.vue": {
+    "file": "assets/Index16.js",
+    "imports": [
+      "_id.js",
+      "_moment.js",
+      "_index29.js",
+      "_index20.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index34.js",
+      "_directive.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js",
+      "_typescript.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_event.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Sale/Customer/Index.vue"
+  },
+  "resources/js/Admin/Sale/Order/Form.vue": {
+    "file": "assets/Form7.js",
+    "imports": [
+      "resources/js/Admin/Sale/Customer/CustomerSelect.vue",
+      "_id.js",
+      "_index20.js",
+      "_index22.js",
+      "_index8.js",
+      "_index35.js",
+      "_index36.js",
+      "_index31.js",
+      "_index24.js",
+      "_index32.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index7.js",
+      "__initCloneObject.js",
+      "_index25.js",
+      "_index23.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Sale/Order/Form.vue"
+  },
+  "resources/js/Admin/Sale/Order/Index.vue": {
+    "file": "assets/Index17.js",
+    "imports": [
+      "_id.js",
+      "_index29.js",
+      "_index20.js",
+      "_index30.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index34.js",
+      "_index22.js",
+      "_index35.js",
+      "_index26.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js",
+      "_typescript.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_event.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index23.js",
+      "__initCloneObject.js",
+      "_index25.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Sale/Order/Index.vue"
+  },
+  "resources/js/Admin/Sale/Order/Show.vue": {
+    "file": "assets/Show5.js",
+    "imports": [
+      "_id.js",
+      "_index29.js",
+      "_index20.js",
+      "_index8.js",
+      "_index30.js",
+      "_index31.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js",
+      "_index33.js",
+      "__Uint8Array.js",
+      "_isEqual.js",
+      "_debounce.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Sale/Order/Show.vue"
+  },
+  "resources/js/Admin/Sale/Return/Index.vue": {
+    "file": "assets/Index18.js",
+    "imports": [
+      "_id.js",
+      "_index29.js",
+      "_index20.js",
+      "_index30.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index34.js",
+      "_index22.js",
+      "_index35.js",
+      "_index26.js",
+      "_directive.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js",
+      "_typescript.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_event.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index23.js",
+      "__initCloneObject.js",
+      "_index25.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Sale/Return/Index.vue"
+  },
+  "resources/js/Admin/Sale/Return/Show.vue": {
+    "file": "assets/Show6.js",
+    "imports": [
+      "_id.js",
+      "_index29.js",
+      "_index20.js",
+      "_index8.js",
+      "_index30.js",
+      "_index31.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js",
+      "_index33.js",
+      "__Uint8Array.js",
+      "_isEqual.js",
+      "_debounce.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/Sale/Return/Show.vue"
+  },
+  "resources/js/Admin/User/Form.vue": {
+    "file": "assets/Form8.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index21.js",
+      "_index22.js",
+      "_index32.js",
+      "_index8.js",
+      "_index7.js",
+      "_typescript.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js",
+      "_index30.js",
+      "_isEqual.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/User/Form.vue"
+  },
+  "resources/js/Admin/User/Index.vue": {
+    "file": "assets/Index19.js",
+    "imports": [
+      "_id.js",
+      "_index29.js",
+      "_index20.js",
+      "_index32.js",
+      "_index8.js",
+      "_index21.js",
+      "_index31.js",
+      "_index34.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js",
+      "_typescript.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_event.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index23.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Admin/User/Index.vue"
+  },
+  "resources/js/Frontend/Auth/Login.vue": {
+    "file": "assets/Login.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index21.js",
+      "_index22.js",
+      "_index8.js",
+      "_index7.js",
+      "_typescript.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Auth/Login.vue"
+  },
+  "resources/js/Frontend/Auth/Register.vue": {
+    "file": "assets/Register.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index21.js",
+      "_index22.js",
+      "_index8.js",
+      "_index7.js",
+      "_typescript.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Auth/Register.vue"
+  },
+  "resources/js/Frontend/Auth/Verify.vue": {
+    "file": "assets/Verify.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index8.js",
+      "_index7.js",
+      "_typescript.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Auth/Verify.vue"
+  },
+  "resources/js/Frontend/Cart/Index.css": {
+    "file": "assets/Index.css",
+    "src": "resources/js/Frontend/Cart/Index.css"
+  },
+  "resources/js/Frontend/Cart/Index.vue": {
+    "css": [
+      "assets/Index.css"
+    ],
+    "file": "assets/Index.js",
+    "imports": [
+      "_id.js",
+      "_index23.js",
+      "_index8.js",
+      "_index24.js",
+      "_event.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_typescript.js",
+      "_index21.js",
+      "_index25.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Cart/Index.vue"
+  },
+  "resources/js/Frontend/Checkout/Shipping.css": {
+    "file": "assets/Shipping.css",
+    "src": "resources/js/Frontend/Checkout/Shipping.css"
+  },
+  "resources/js/Frontend/Checkout/Shipping.vue": {
+    "css": [
+      "assets/Shipping.css"
+    ],
+    "file": "assets/Shipping.js",
+    "imports": [
+      "resources/js/Frontend/Checkout/ShippingAddress.vue",
+      "_id.js",
+      "_index8.js",
+      "_index20.js",
+      "_index7.js",
+      "_typescript.js",
+      "_index26.js",
+      "_index27.js",
+      "_scroll.js",
+      "_event.js",
+      "_index21.js",
+      "_index22.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js",
+      "_index28.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Checkout/Shipping.vue"
+  },
+  "resources/js/Frontend/Checkout/ShippingAddress.css": {
+    "file": "assets/ShippingAddress.css",
+    "src": "resources/js/Frontend/Checkout/ShippingAddress.css"
+  },
+  "resources/js/Frontend/Checkout/ShippingAddress.vue": {
+    "css": [
+      "assets/ShippingAddress.css"
+    ],
+    "file": "assets/ShippingAddress.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index26.js",
+      "_index8.js",
+      "_index21.js",
+      "_index22.js",
+      "_index28.js",
+      "_index7.js",
+      "_typescript.js",
+      "_index27.js",
+      "_scroll.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Checkout/ShippingAddress.vue"
+  },
+  "resources/js/Frontend/Home.css": {
+    "file": "assets/Home.css",
+    "src": "resources/js/Frontend/Home.css"
+  },
+  "resources/js/Frontend/Home.vue": {
+    "css": [
+      "assets/Home.css"
+    ],
+    "file": "assets/Home.js",
+    "imports": [
+      "_id.js",
+      "_index8.js",
+      "_typescript.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Home.vue"
+  },
+  "resources/js/Frontend/Pages/About.vue": {
+    "file": "assets/About.js",
+    "imports": [
+      "_id.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Pages/About.vue"
+  },
+  "resources/js/Frontend/Pages/Tutorial.vue": {
+    "file": "assets/Tutorial.js",
+    "imports": [
+      "_id.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Pages/Tutorial.vue"
+  },
+  "resources/js/Frontend/Product/Category.vue": {
+    "file": "assets/Category.js",
+    "imports": [
+      "_id.js",
+      "_index8.js",
+      "_typescript.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Product/Category.vue"
+  },
+  "resources/js/Frontend/Product/Index.vue": {
+    "file": "assets/Index2.js",
+    "imports": [
+      "_id.js",
+      "_index8.js",
+      "_typescript.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Product/Index.vue"
+  },
+  "resources/js/Frontend/Product/RecentProducts.vue": {
+    "file": "assets/RecentProducts.js",
+    "imports": [
+      "_id.js",
+      "_index8.js",
+      "_typescript.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Product/RecentProducts.vue"
+  },
+  "resources/js/Frontend/Product/Show.css": {
+    "file": "assets/Show.css",
+    "src": "resources/js/Frontend/Product/Show.css"
+  },
+  "resources/js/Frontend/Product/Show.vue": {
+    "css": [
+      "assets/Show.css"
+    ],
+    "file": "assets/Show.js",
+    "imports": [
+      "_id.js",
+      "resources/js/app.js",
+      "_index20.js",
+      "_index8.js",
+      "_index24.js",
+      "_index7.js",
+      "_typescript.js",
+      "_index21.js",
+      "_event.js",
+      "_index25.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/Product/Show.vue"
+  },
+  "resources/js/Frontend/User/Index.vue": {
+    "file": "assets/Index3.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index21.js",
+      "_index22.js",
+      "_index7.js",
+      "_typescript.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/User/Index.vue"
+  },
+  "resources/js/Frontend/UserAddress/Form.vue": {
+    "file": "assets/Form.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index21.js",
+      "_index22.js",
+      "_index8.js",
+      "_index28.js",
+      "_index7.js",
+      "_typescript.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/UserAddress/Form.vue"
+  },
+  "resources/js/Frontend/UserAddress/Index.vue": {
+    "file": "assets/Index4.js",
+    "imports": [
+      "_id.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/UserAddress/Index.vue"
+  },
+  "resources/js/Frontend/UserOrder/Index.vue": {
+    "file": "assets/Index5.js",
+    "imports": [
+      "_moment.js",
+      "_id.js",
+      "_index20.js",
+      "_index29.js",
+      "_index21.js",
+      "_index8.js",
+      "_index7.js",
+      "_typescript.js",
+      "_index27.js",
+      "_scroll.js",
+      "_event.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/UserOrder/Index.vue"
+  },
+  "resources/js/Frontend/UserOrder/SelectOrder.vue": {
+    "file": "assets/SelectOrder.js",
+    "imports": [
+      "_id.js",
+      "_index32.js",
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/UserOrder/SelectOrder.vue"
+  },
+  "resources/js/Frontend/UserOrder/Show.css": {
+    "file": "assets/Show2.css",
+    "src": "resources/js/Frontend/UserOrder/Show.css"
+  },
+  "resources/js/Frontend/UserOrder/Show.vue": {
+    "css": [
+      "assets/Show2.css"
+    ],
+    "file": "assets/Show2.js",
+    "imports": [
+      "_moment.js",
+      "_id.js",
+      "_index30.js",
+      "_index8.js",
+      "_typescript.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/UserOrder/Show.vue"
+  },
+  "resources/js/Frontend/UserReturn/Form.vue": {
+    "file": "assets/Form2.js",
+    "imports": [
+      "resources/js/Frontend/UserOrder/SelectOrder.vue",
+      "_id.js",
+      "_index20.js",
+      "_index22.js",
+      "_index31.js",
+      "_index24.js",
+      "_index21.js",
+      "_index32.js",
+      "_index30.js",
+      "_isEqual.js",
+      "__Uint8Array.js",
+      "_event.js",
+      "_scroll.js",
+      "_debounce.js",
+      "_index33.js",
+      "_index7.js",
+      "_typescript.js",
+      "__initCloneObject.js",
+      "_index23.js",
+      "_index25.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/UserReturn/Form.vue"
+  },
+  "resources/js/Frontend/UserReturn/Index.vue": {
+    "file": "assets/Index6.js",
+    "imports": [
+      "_moment.js",
+      "_id.js",
+      "_index21.js",
+      "_index8.js",
+      "_index30.js",
+      "_typescript.js",
+      "_event.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/UserReturn/Index.vue"
+  },
+  "resources/js/Frontend/UserReturn/Show.css": {
+    "file": "assets/Show3.css",
+    "src": "resources/js/Frontend/UserReturn/Show.css"
+  },
+  "resources/js/Frontend/UserReturn/Show.vue": {
+    "css": [
+      "assets/Show3.css"
+    ],
+    "file": "assets/Show3.js",
+    "imports": [
+      "_moment.js",
+      "_id.js",
+      "_index30.js",
+      "_index8.js",
+      "_typescript.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/UserReturn/Show.vue"
+  },
+  "resources/js/admin.css": {
+    "file": "assets/admin.css",
+    "src": "resources/js/admin.css"
+  },
+  "resources/js/admin.js": {
+    "css": [
+      "assets/admin.css"
+    ],
+    "dynamicImports": [
+      "resources/js/Admin/Auth/Login.vue",
+      "resources/js/Admin/Dashboard/Index.vue",
+      "resources/js/Admin/Inventory/Brand/BrandSelect.vue",
+      "resources/js/Admin/Inventory/Brand/Index.vue",
+      "resources/js/Admin/Inventory/Category/CategorySelect.vue",
+      "resources/js/Admin/Inventory/Category/Index.vue",
+      "resources/js/Admin/Inventory/Product/Form.vue",
+      "resources/js/Admin/Inventory/Product/Index.vue",
+      "resources/js/Admin/Inventory/Unit/Index.vue",
+      "resources/js/Admin/Inventory/Unit/UnitSelect.vue",
+      "resources/js/Admin/Purchase/Order/Form.vue",
+      "resources/js/Admin/Purchase/Order/Index.vue",
+      "resources/js/Admin/Purchase/Order/Show.vue",
+      "resources/js/Admin/Purchase/Supplier/Form.vue",
+      "resources/js/Admin/Purchase/Supplier/Index.vue",
+      "resources/js/Admin/Purchase/Supplier/SupplierSelect.vue",
+      "resources/js/Admin/Sale/Customer/CustomerSelect.vue",
+      "resources/js/Admin/Sale/Customer/Form.vue",
+      "resources/js/Admin/Sale/Customer/Index.vue",
+      "resources/js/Admin/Sale/Order/Form.vue",
+      "resources/js/Admin/Sale/Order/Index.vue",
+      "resources/js/Admin/Sale/Order/Show.vue",
+      "resources/js/Admin/Sale/Return/Index.vue",
+      "resources/js/Admin/Sale/Return/Show.vue",
+      "resources/js/Admin/User/Form.vue",
+      "resources/js/Admin/User/Index.vue"
+    ],
+    "file": "assets/admin.js",
+    "imports": [
+      "_id.js",
+      "_debounce.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/admin.js"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "css": [
+      "assets/app.css"
+    ],
+    "dynamicImports": [
+      "resources/js/Frontend/Auth/Login.vue",
+      "resources/js/Frontend/Auth/Register.vue",
+      "resources/js/Frontend/Auth/Verify.vue",
+      "resources/js/Frontend/Cart/Index.vue",
+      "resources/js/Frontend/Checkout/Shipping.vue",
+      "resources/js/Frontend/Checkout/ShippingAddress.vue",
+      "resources/js/Frontend/Home.vue",
+      "resources/js/Frontend/Pages/About.vue",
+      "resources/js/Frontend/Pages/Tutorial.vue",
+      "resources/js/Frontend/Product/Category.vue",
+      "resources/js/Frontend/Product/Index.vue",
+      "resources/js/Frontend/Product/RecentProducts.vue",
+      "resources/js/Frontend/Product/Show.vue",
+      "resources/js/Frontend/User/Index.vue",
+      "resources/js/Frontend/UserAddress/Form.vue",
+      "resources/js/Frontend/UserAddress/Index.vue",
+      "resources/js/Frontend/UserOrder/Index.vue",
+      "resources/js/Frontend/UserOrder/SelectOrder.vue",
+      "resources/js/Frontend/UserOrder/Show.vue",
+      "resources/js/Frontend/UserReturn/Form.vue",
+      "resources/js/Frontend/UserReturn/Index.vue",
+      "resources/js/Frontend/UserReturn/Show.vue"
+    ],
+    "file": "assets/app.js",
+    "imports": [
+      "_id.js",
+      "_index7.js",
+      "_index8.js",
+      "_typescript.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/styles/app.scss": {
+    "file": "assets/app2.css",
+    "isEntry": true,
+    "src": "resources/styles/app.scss"
+  }
+}
