@@ -105,7 +105,7 @@
                                 <el-table-column prop="stock" label="Stok Sekarang" width="120" align="center"/>
                                 <el-table-column label="Stok Minimum" width="120" align="center">
                                     <template #default>
-                                        20
+                                        5
                                     </template>
                                 </el-table-column>
                             </el-table>

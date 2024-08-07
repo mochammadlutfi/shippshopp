@@ -120,7 +120,6 @@ class CustomerController extends Controller
         $rules = [
             'name' => 'required',
             'phone' => 'required',
-            'address' => 'required',
         ];
 
         $pesan = [
@@ -139,8 +138,9 @@ class CustomerController extends Controller
                     $data->name = $request->name;
                     $data->email = $request->email;
                     $data->phone = $request->phone;
-                    $data->pic = $request->pic;
-                    $data->address = $request->address;
+                    if($request->password){
+                    $data->password = Hash::make($request->password);
+                    }
                     $data->save();
 
             }catch(\QueryException $e){

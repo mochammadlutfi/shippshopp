@@ -193,29 +193,6 @@ class OrderController extends Controller
             'data' => $data
         ]);
     }
-    
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function updateStatus(Request $request)
-    {
-        
-        DB::beginTransaction();
-        try{
-
-            $data = Purchase::where('id', $request->id)->first();
-            $data->status = $request->status;
-            $data->save();
-        }catch(\QueryException $e){
-            DB::rollback();
-            return back();
-        }
-        DB::commit();
-        return redirect()->route('admin.purchase.order.show', $data->id);
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -319,16 +296,13 @@ class OrderController extends Controller
             $data->date_received = Carbon::today();
             $data->save();
 
-
             if($request->state === 'done'){
                 foreach($data->lines as $line){
                     $s = Product::where('id', $line->product_id)->first();
                     $s->stok = $s->stok + $line->qty;
                     $s->save();
-                    // dd($s);
                 }
             }
-
         }catch(\QueryException $e){
             DB::rollback();
             return back();

@@ -85,6 +85,8 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import moment from 'moment';
+import { router } from '@inertiajs/vue3'
+
 
 const data = ref([]);
 const isLoading = ref(true);
@@ -138,7 +140,7 @@ const hapus = (id) => {
     cancelButtonText: 'Tidak!',
     type: 'warning',
   }).then(() => {
-    this.$inertia.delete(this.route('admin.sale.customer.delete', { id }), {
+    router.delete(`/admin/supplier/${id}/delete`, {
       preserveScroll: true,
       onSuccess: () => {
         fetchData();
