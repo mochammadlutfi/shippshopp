@@ -46,12 +46,12 @@ createInertiaApp({
         //         key: 'AIzaSyAsIAx0nM0uDri0syUHSm9eiBg3cDbl8eo',
         //     },
         // });
-        app.use(VueGoogleMaps, {
-            load: {
-                key: 'AIzaSyAsIAx0nM0uDri0syUHSm9eiBg3cDbl8eo',
-                libraries: "places"
-            },
-        });
+        // app.use(VueGoogleMaps, {
+        //     load: {
+        //         key: 'AIzaSyAsIAx0nM0uDri0syUHSm9eiBg3cDbl8eo',
+        //         libraries: "places"
+        //     },
+        // });
         
         return app.mount(el);
     },
