@@ -211,8 +211,9 @@ class OrderController extends Controller
 
             if($request->status === 'done'){
                 foreach($data->line as $line){
-                    $s = ProductStock::firstOrNew(['product_id' =>  $line->product_id, 'variant_id' =>  $line->variant_id]);
-                    $s->stock = ($s->stock != null) ? $s->stock + $line->qty : $line->qty;
+                    // $s = Produk::firstOrNew(['product_id' =>  $line->product_id, 'variant_id' =>  $line->variant_id]);
+                    $s = Produk::where('id', $line->product_id)->first();
+                    $s->stok = ($s->stok != null) ? $s->stok + $line->qty : $line->qty;
                     $s->save();
                 }
             }
