@@ -7,7 +7,7 @@ use Inertia\Inertia;
 
 Route::get('clear_cache', function () {
 
-    \Artisan::call('cache:clear');
+    \Artisan::call('optimize:clear');
 
     dd("Cache is cleared");
 
