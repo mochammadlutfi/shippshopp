@@ -5,6 +5,14 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+Route::get('clear_cache', function () {
+
+    \Artisan::call('cache:clear');
+
+    dd("Cache is cleared");
+
+});
+
 
 Route::namespace('Frontend')->group(function(){
     Route::post('/payment-callback','CheckoutController@callbackPayment');
