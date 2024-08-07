@@ -14,7 +14,7 @@
                     <template v-if="data.state == 'draft'">
                     <el-button type="primary" @click.prevent="updateState('pending')">
                         <i class="fa fa-check me-2"></i>
-                        Seuju
+                        Setuju
                     </el-button>
                     <el-button type="primary" plain @click.prevent="updateState('cancel')">
                         <i class="fa fa-close me-2"></i>

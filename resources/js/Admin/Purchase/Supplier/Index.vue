@@ -40,7 +40,7 @@
                         <el-table-column prop="nama" label="Nama" sortable/>
                         <el-table-column prop="hp" label="No HP" sortable/>
                         <el-table-column prop="email" label="Email" sortable/>
-                        <el-table-column prop="address" label="Alamat" sortable/>
+                        <el-table-column prop="alamat" label="Alamat" sortable/>
                         <el-table-column label="Aksi" align="center" width="180">
                             <template #default="scope">
                                 <el-dropdown popper-class="dropdown-action" trigger="click">

@@ -14,8 +14,8 @@
                     <img src="/images/logo/logo.png" width="80pt"/>
                 </td>
                 <td class="text-center">
-                    <h1 class="h4 text-center" style="font-size: 20pt;font-weight:bold;">TOKO KOMBET</h1>
-                    <p class="mb-0" style="font-size: 14pt;margin-bottom:15px">Mahato, Tambusai Utara, Kab. Rokan Hulu, Riau</p>
+                    <h1 class="h4 text-center" style="font-size: 20pt;font-weight:bold;">Shipp Shopp Vape Store</h1>
+                    <p class="mb-0" style="font-size: 14pt;margin-bottom:15px">Jl. Raya Binong No.6, Binong, Kec. Curug, Kabupaten Tangerang, Banten 15810</p>
                 </td>
             </tr>
         </table>
