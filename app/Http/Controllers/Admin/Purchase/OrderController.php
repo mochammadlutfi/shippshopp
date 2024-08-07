@@ -16,6 +16,7 @@ use PDF;
 use App\Models\Purchase\PurchaseOrder;
 use App\Models\Purchase\PurchaseOrderLine;
 use App\Models\Inventory\ProductVariant;
+use App\Models\Inventory\Product;
 
 class OrderController extends Controller
 {
@@ -208,16 +209,6 @@ class OrderController extends Controller
             $data = Purchase::where('id', $request->id)->first();
             $data->status = $request->status;
             $data->save();
-
-            if($request->status === 'done'){
-                foreach($data->line as $line){
-                    // $s = Produk::firstOrNew(['product_id' =>  $line->product_id, 'variant_id' =>  $line->variant_id]);
-                    $s = Produk::where('id', $line->product_id)->first();
-                    $s->stok = ($s->stok != null) ? $s->stok + $line->qty : $line->qty;
-                    $s->save();
-                }
-            }
-
         }catch(\QueryException $e){
             DB::rollback();
             return back();
@@ -327,6 +318,16 @@ class OrderController extends Controller
             $data->state = $request->state;
             $data->date_received = Carbon::today();
             $data->save();
+
+
+            if($request->state === 'done'){
+                foreach($data->lines as $line){
+                    $s = Product::where('id', $line->product_id)->first();
+                    $s->stok = $s->stok + $line->qty;
+                    $s->save();
+                    // dd($s);
+                }
+            }
 
         }catch(\QueryException $e){
             DB::rollback();
