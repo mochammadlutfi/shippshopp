@@ -118,7 +118,7 @@ class OrderController extends Controller
     public function edit($id)
     {
         $data = SaleOrder::with(['lines' => function($q){
-            $q->with(['product:id,name', 'variant:id,name', 'unit:id,name,code']);
+            $q->with(['product']);
         }, 'customer'])
         ->where('id', $id)->first();
 
@@ -194,8 +194,8 @@ class OrderController extends Controller
     public function show($id)
     {
         $data = SaleOrder::with(['lines' => function($q){
-            $q->with(['product:id,name', 'variant:id,name', 'unit:id,name,code']);
-        }, 'customer', 'shipping'])
+            $q->with(['product']);
+        }, 'customer'])
         ->where('id', $id)->first();
 
         return Inertia::render('Sale/Order/Show',[

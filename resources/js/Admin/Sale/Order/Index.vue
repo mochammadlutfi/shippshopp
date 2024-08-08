@@ -74,6 +74,19 @@
                         <el-table-column type="index" width="100" />
                         <el-table-column prop="nomor" label="Nomor" sortable/>
                         <el-table-column prop="customer.name" label="Pelanggan" sortable/>
+                        <el-table-column prop="status_pembayaran" label="Status Pembayaran" sortable>
+                            <template #default="scope">
+                                <el-tag type="danger" v-if="scope.row.payment_status == 'unpaid'">
+                                    Belum Bayar
+                                </el-tag>
+                                <el-tag type="warning" v-else-if="scope.row.payment_status == 'pending'">
+                                    Pending
+                                </el-tag>
+                                <el-tag type="success" v-else-if="scope.row.payment_status == 'paid'">
+                                    Lunas
+                                </el-tag>
+                            </template>
+                        </el-table-column>
                         <el-table-column prop="total" label="Total" sortable>
                             <template #default="scope">
                                 {{ currency(scope.row.total) }}

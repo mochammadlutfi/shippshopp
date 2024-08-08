@@ -99,6 +99,15 @@ class UserAddressController extends Controller
         }
     }
 
+    public function edit($id, Request $request)
+    {
+        $data = UserAddress::find($request->id);
+
+        return Inertia::render('UserAddress/Form',[
+            'data' => $data,
+        ]);
+    }
+
         /**
      * Store a newly created resource in storage.
      * @param Request $request
@@ -111,7 +120,6 @@ class UserAddressController extends Controller
             'reciever' => 'required',
             'phone' => 'required',
             'reciever' => 'required',
-            'area_id' => 'required',
             'address' => 'required',
         ];
 
@@ -119,7 +127,6 @@ class UserAddressController extends Controller
             'name.required' => 'Label Alamat Wajib Diisi!',
             'reciever.required' => 'Nama Penerima Wajib Diisi!',
             'phone.required' => 'No Handphone Penerima Wajib Diisi!',
-            'area_id.required' => 'Wilayah Wajib Diisi!',
             'address.required' => 'Alamat Lengkap Wajib Diisi!',
         ];
 
@@ -134,12 +141,8 @@ class UserAddressController extends Controller
                     $data->name = $request->name;
                     $data->reciever = $request->reciever;
                     $data->phone = $request->phone;
-                    $data->area = $request->formatted_address;
                     $data->address = $request->address;
                     $data->is_main = $request->is_main;
-                    $data->lat = $request->lat;
-                    $data->lng = $request->lng;
-                    $data->distance = $request->distance;
                     $data->save();
 
             }catch(\QueryException $e){

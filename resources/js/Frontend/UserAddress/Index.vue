@@ -1,5 +1,6 @@
 <template>
-    <user-layout>
+    <base-layout>
+        <div class="content">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h3 class="fs-4 fw-bold mb-0">Buku Alamat</h3>
             <div class="space-x-1">
@@ -9,8 +10,9 @@
                 </a>
             </div>
         </div>
-        
-        <div class="block rounded block-shadow block-bordered mb-2" v-for="d in data" :key="d.id">
+        <el-row :gutter="20">
+            <el-col :span="12" v-for="d in data" :key="d.id" class="mb-4">
+        <div class="block rounded block-shadow block-bordered mb-2" >
             <div class="block-header border-3x border-bottom p-2">
                 <h3 class="block-title">{{ d.name }}</h3>
                 <span class="badge badge-primary p-1" v-if="d.is_main == 1">Alamat Utama</span>
@@ -26,11 +28,11 @@
                 <!-- <div class="content__district">{{ d.area }}</div> -->
             </div>
             <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
-                <a :href="route('user.address.edit', {id : d.id})" class="ep-button ep-button--info">
+                <a :href="route('user.address.edit', {id : d.id})" class="ep-button ep-button--primary">
                     <i class="si si-note me-1"></i>
                     Ubah
                 </a>
-                <el-button type="danger" @click.prevent="destroy(d.id)" plain>
+                <el-button type="danger" @click.prevent="destroy(d.id)">
                     <i class="si si-trash me-1"></i>
                     Hapus
                 </el-button>
@@ -39,7 +41,10 @@
                 </button>
             </div>
         </div>
-    </user-layout>
+            </el-col>
+        </el-row>
+        </div>
+    </base-layout>
 </template>
 
 <script>

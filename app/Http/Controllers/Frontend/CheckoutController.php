@@ -148,7 +148,7 @@ class CheckoutController extends Controller
             ]);
         }
         DB::commit();
-        return redirect()->to('https://app.sandbox.midtrans.com/snap/v4/vtweb/'.$snapToken);
+        return Inertia::location('https://app.sandbox.midtrans.com/snap/v4/redirection/'.$snapToken);
     }
 
     

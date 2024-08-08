@@ -48,15 +48,11 @@
                                 <div class="fs-6">Total Harga ({{ cart.length }} barang)</div>
                                 <div class="fs-6 fw-bold">{{ currency(totalHarga) }}</div>
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <div class="fs-6">Biaya Kirim</div>
-                                <div class="fs-6 fw-bold">{{ currency(shippingCost) }}</div>
-                            </div>
                         </div>
                         <div class="block-content p-4 border-top border-2x">
                             <div class="d-flex justify-content-between mb-3">
                                 <div class="fs-5">Total Belanja</div>
-                                <div class="fs-5 fw-bold">{{ currency(totalHarga + shippingCost) }}</div>
+                                <div class="fs-5 fw-bold">{{ currency(totalHarga) }}</div>
                             </div>
                             <el-button type="primary" size="large" class="w-100" @click="payment">
                                 Lanjut Ke Pembayaran
@@ -86,7 +82,6 @@ export default {
             selected : [],
             selectAll : false,
             address : {},
-            shippingCost : 0,
             showAll : true,
         }
     },
@@ -128,11 +123,11 @@ export default {
         this.getAddress();
     },
     methods :{
-        payment(){
+        async payment(){
             const form = this.$inertia.form({
                 lines : this.cart,
                 address_id : this.address.id,
-                shipping_cost : this.shippingCost,
+                shipping_cost : 0,
                 total : this.totalHarga
             });
 

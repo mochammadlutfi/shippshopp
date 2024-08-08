@@ -1,5 +1,9 @@
 <template>
-    <user-layout>
+    <base-layout>
+        <div class="content">
+            <el-row justify="center">
+                <el-col :span="16">
+                
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h3 class="fs-4 fw-bold mb-0">Detail Pesanan</h3>
         </div>
@@ -9,14 +13,18 @@
                     <div class="fw-bold">{{ data.nomor }}</div>
                     <div class="border-2 border-dark border-start fw-medium ms-2 ps-2">
                         {{ format_date(data.created_at) }}
+                        <el-tag class="ml-2" type="danger" v-if="data.state == 'pending' && data.payment_status == 'unpaid'">Belum Bayar</el-tag>
+                        <el-tag class="ml-2" type="warning" v-else-if="data.state == 'process'">Dikemas</el-tag>
+                        <el-tag class="ml-2" type="info" v-else-if="data.state == 'shipping'">Dikirim</el-tag>
+                        <el-tag class="ml-2" type="success" v-else-if="data.state == 'done'">Selesai</el-tag>
+                        <el-tag class="ml-2" type="danger" v-else-if="data.state == 'cancel'">Batal</el-tag>
                     </div>
                 </div>
                 <div class="block-options">
-                    <el-tag class="ml-2" type="danger" v-if="data.state == 'pending' && data.payment_status == 'unpaid'">Belum Bayar</el-tag>
-                    <el-tag class="ml-2" type="warning" v-else-if="data.state == 'process'">Dikemas</el-tag>
-                    <el-tag class="ml-2" type="info" v-else-if="data.state == 'shipping'">Dikirim</el-tag>
-                    <el-tag class="ml-2" type="success" v-else-if="data.state == 'done'">Selesai</el-tag>
-                    <el-tag class="ml-2" type="danger" v-else-if="data.state == 'cancel'">Batal</el-tag>
+                    
+                    <a :href="`https://app.sandbox.midtrans.com/snap/v4/redirection/${data.payment_ref}`" class="ep-button ep-button--primary" v-if="data.payment_status == 'unpaid'">
+                        Bayar Sekarang
+                    </a>
                 </div>
             </div>
             <div class="block-content p-3">
@@ -61,14 +69,6 @@
                     </div>
                     <div class="order-row">
                         <div class="col-title">
-                            <span>Ongkos Kirim</span>
-                        </div>
-                        <div class="col-val">
-                            <div>{{ currency(data.shipping_cost) }}</div>
-                        </div>
-                    </div>
-                    <div class="order-row">
-                        <div class="col-title">
                             <span>Total Belanja</span>
                         </div>
                         <div class="col-val">
@@ -78,7 +78,10 @@
                 </div>
             </div>
         </div>
-    </user-layout>
+            </el-col>
+        </el-row>
+        </div>
+    </base-layout>
 </template>
 
 <style lang="scss">
@@ -167,6 +170,17 @@ export default {
                 moment.locale('id');
                 return moment(String(v)).format('DD MMMM YYYY')
             }
+        },
+
+        async doTest(){
+            
+            const form = this.$inertia.form({
+                id : this.data.id,
+            });
+
+            form.post(this.route('user.order.test'), {
+                preserveScroll: true,
+            });
         }
     }
 }

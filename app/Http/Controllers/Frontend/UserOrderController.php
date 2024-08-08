@@ -46,18 +46,49 @@ class UserOrderController extends Controller
         ])
         ->where('id', $id)->first();
 
+        // return redirect()->to('https://app.sandbox.midtrans.com/snap/v4/redirection/'.$data->payment_ref);
+
         return Inertia::render('UserOrder/Show',[
             'data' => $data,
         ]);
     }
 
+    public function test(Request $request)
+    {
+        header("Access-Control-Allow-Origin: *");
+    //  dd($request->all());   
+        $data = SaleOrder::with([
+            'lines' => function($q){
+                return $q->with(['product']);
+            }, 'customer', 'shipping'
+        ])
+        ->where('id', $request->id)->first();
+
+        // return $this->redirect($data->payment_ref);
+        // return redirect()->route('user.order.payment', $data->id);
+        return Inertia::location('https://app.sandbox.midtrans.com/snap/v4/redirection/'.$data->payment_ref);
+
+
+        
+        // return redirect()->to('https://app.sandbox.midtrans.com/snap/v4/redirection/'.$data->payment_ref);
+
+    }
+
+    public function redirect($p){
+        return redirect()->away('https://app.sandbox.midtrans.com/snap/v4/redirection/'.$p);
+
+    }
     public function payment(Request $request)
     {
+       
         if($request->order_id){
             $data = SaleOrder::where('uid', $request->order_id)->first();
     
             if($request->transaction_status == 'expire'){
                 $data->state = 'cancel';
+                $data->save();
+            }elseif($request->transaction_status == 'settlement'){
+                $data->payment_status = 'paid';
                 $data->save();
             }
     

@@ -64,6 +64,23 @@
                     </el-col>
                 </el-row>
             </div>
+            <el-table :data="data" class="w-100"  
+            @sort-change="sortChange" header-cell-class-name="bg-dark text-white">
+                <el-table-column type="index" width="100" />
+                <el-table-column prop="nomor" label="Nomor" sortable/>
+                <el-table-column prop="total" label="Total" sortable>
+                    <template #default="scope">
+                        {{ currency(scope.row.total) }}
+                    </template>
+                </el-table-column>
+                <el-table-column label="Aksi" align="center" width="180">
+                    <template #default="scope">
+                        <a :href="route('user.order.show', {id : scope.row.id})" class="ep-button ep-button--primary">
+                            Detail
+                        </a>
+                    </template>
+                </el-table-column>
+            </el-table>
         </div>
     </div>
     </base-layout>

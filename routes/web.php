@@ -101,6 +101,7 @@ Route::namespace('Frontend')->group(function(){
             Route::prefix('/order')->name('order.')->group(function () {
                 Route::get('/', 'UserOrderController@index')->name('index');
                 Route::get('/payment', 'UserOrderController@payment')->name('payment');
+                Route::post('/test', 'UserOrderController@test')->name('test');
                 Route::get('/menunggu-pembayaran', 'UserOrderController@unpaid')->name('unpaid');
                 Route::get('/data', 'UserOrderController@data')->name('data');
                 Route::get('/{id}', 'UserOrderController@show')->name('show');

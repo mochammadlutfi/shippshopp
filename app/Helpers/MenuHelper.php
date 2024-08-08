@@ -122,29 +122,44 @@ class MenuHelper
                 "to" => "admin.purchase.order.index",
             ]);
             
-            $menuData->push([
-                "name" => 'Inventaris',
-                "icon" => 'fa fa-boxes-stacked',
-                "subActivePaths" => 'admin.inventory.*',
-                "sub" => [
-                    [
-                        "name" => 'Produk',
-                        "to" => 'admin.inventory.product.index',
-                    ],
-                    [
-                        "name" => 'Kategori',
-                        "to" => 'admin.inventory.category.index',
-                    ],
-                    [
-                        "name" => 'Satuan',
-                        "to" => 'admin.inventory.unit.index',
-                    ],
-                    [
-                        "name" => 'Merk',
-                        "to" => 'admin.inventory.brand.index',
-                    ],
-                ]
-            ]);
+        $menuData->push([
+            "icon" => "fa fa-boxes",
+            "name" => "Produk",
+            "to" => "admin.inventory.product.index",
+        ]);
+        $menuData->push([
+            "icon" => "fa fa-archive",
+            "name" => "Kategori",
+            "to" => "admin.inventory.category.index",
+        ]);
+        $menuData->push([
+            "icon" => "fa fa-star",
+            "name" => "Merk",
+            "to" => "admin.inventory.brand.index",
+        ]);
+            // $menuData->push([
+            //     "name" => 'Inventaris',
+            //     "icon" => 'fa fa-boxes-stacked',
+            //     "subActivePaths" => 'admin.inventory.*',
+            //     "sub" => [
+            //         [
+            //             "name" => 'Produk',
+            //             "to" => 'admin.inventory.product.index',
+            //         ],
+            //         [
+            //             "name" => 'Kategori',
+            //             "to" => 'admin.inventory.category.index',
+            //         ],
+            //         [
+            //             "name" => 'Satuan',
+            //             "to" => 'admin.inventory.unit.index',
+            //         ],
+            //         [
+            //             "name" => 'Merk',
+            //             "to" => 'admin.inventory.brand.index',
+            //         ],
+            //     ]
+            // ]);
         }
 
         

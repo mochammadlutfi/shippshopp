@@ -92,25 +92,16 @@
                     <el-table :data="data.lines" border id="variant" class="mb-2 rounded fs-6">
                         <el-table-column label="Produk">
                             <template #default="scope">
-                                <div>{{ scope.row.product.name }}
-                                    <template v-if="scope.row.variant.name">
-                                        - {{ scope.row.variant.name }}
-                                    </template>
+                                <div>{{ scope.row.product.nama }}
                                 </div>
-                                <div>{{ scope.row.variant.sku }}</div>
                             </template>
                         </el-table-column>
                         <el-table-column label="Harga" width="150">
                             <template #default="scope">
-                                {{ currency(scope.row.price) }}
+                                {{ currency(scope.row.harga) }}
                             </template>
                         </el-table-column>
                         <el-table-column prop="qty" label="Qty" width="100"/>
-                        <el-table-column label="Satuan" width="120">
-                            <template #default="scope">
-                                {{ scope.row.unit.name }} ({{ scope.row.unit.code }})
-                            </template>
-                        </el-table-column>
                         <el-table-column label="Total" width="200">
                             <template #default="scope">
                                 {{ currency(scope.row.subtotal) }}
@@ -124,10 +115,10 @@
                                 <div class="fs-6 fw-semibold">Total</div>
                                 <div class="fs-6 fw-bold text-end w-50">{{ currency(data.total) }}</div>
                             </div>
-                            <div class="d-flex float-end justify-content-end w-75 mb-2">
+                            <!-- <div class="d-flex float-end justify-content-end w-75 mb-2">
                                 <div class="fs-6 fw-semibold">Biaya Kirim</div>
                                 <div class="fs-6 fw-bold text-end w-50">{{ currency(data.shipping_cost) }}</div>
-                            </div>
+                            </div> -->
                             <div class="d-flex float-end justify-content-end w-75 pt-2 mb-2 border-top border-2">
                                 <div class="fs-5 fw-semibold">Total Belanja</div>
                                 <div class="fs-5 fw-bold text-end w-50">{{ currency(data.grand_total) }}</div>
