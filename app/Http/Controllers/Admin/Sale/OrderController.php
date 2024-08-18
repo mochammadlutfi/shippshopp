@@ -34,10 +34,10 @@ class OrderController extends Controller
     public function index(Request $request)
     {
         $counter = collect([
-            'pending' => SaleOrder::where('state', 'pending')->where('payment_status', 'paid')->get()->count(), 
-            'process' => SaleOrder::where('state', 'process')->where('payment_status', 'paid')->get()->count(),
-            'done' => SaleOrder::where('state', 'done')->where('payment_status', 'paid')->get()->count(),
-            'shipped' => SaleOrder::where('state', 'shipped')->where('payment_status', 'paid')->get()->count(),
+            'pending' => SaleOrder::where('state', 'pending')->get()->count(), 
+            'process' => SaleOrder::where('state', 'process')->get()->count(),
+            'done' => SaleOrder::where('state', 'done')->get()->count(),
+            'shipped' => SaleOrder::where('state', 'shipped')->get()->count(),
             'cancel' => SaleOrder::where('state', 'cancel')->get()->count(),
         ]);
 
