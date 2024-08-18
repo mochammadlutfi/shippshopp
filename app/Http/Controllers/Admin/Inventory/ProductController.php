@@ -167,7 +167,7 @@ class ProductController extends Controller
                         }
                     }
                     
-                    if(count($request->imageDeleted)){
+                    if($request->imageDeleted){
                         foreach($request->imageDeleted as $d){
                             $img = ProductImage::where('path', $d['url'])->delete();
                         }
