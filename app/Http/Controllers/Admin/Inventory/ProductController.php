@@ -166,9 +166,11 @@ class ProductController extends Controller
                             $img->save();
                         }
                     }
-
-                    foreach($request->imageDeleted as $d){
-                        $img = ProductImage::where('path', $d['url'])->delete();
+                    
+                    if(count($request->imageDeleted)){
+                        foreach($request->imageDeleted as $d){
+                            $img = ProductImage::where('path', $d['url'])->delete();
+                        }
                     }
                 }
             }catch(\QueryException $e){
