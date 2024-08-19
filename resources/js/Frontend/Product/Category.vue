@@ -22,32 +22,24 @@
                     <div class="content-heading pt-0 mb-3 border-0 d-flex justify-content-between">
                         <h3 class="fs-3 mb-0">Produk Terbaru</h3>
                     </div>
-                    <el-row :gutter="20">
-                        <el-col :lg="5" v-for="(d, i) in product.data" :key="i">
+                    <el-row :gutter="20"> 
+                        <el-col :lg="6" v-for="(d, i) in product.data" :key="i">
                             <div class="product">
-                                <div class="product-content">
+                                <div class="product-content"> 
                                     <div class="product-img">
-                                        <!-- <a :href="route('product.show', { 'slug' : d.slug })"> -->
+                                        <a :href="route('product.show', { 'slug' : d.slug })">
                                             <img :src="d.main_image" class="img-fluid"/>
-                                        <!-- </a> -->
+                                        </a>
                                     </div>
                                     <div class="product-info">
                                         <div class="product-title">
-                                            <!-- <a :href="route('product.show', { 'slug' : d.slug })"> -->
-                                                {{ d.name }}
-                                            <!-- </a> -->
+                                            <a :href="route('product.show', { 'slug' : d.slug })">
+                                                {{ d.nama }}
+                                            </a>
                                         </div>
                                         <div class="product-price">
-                                            {{ currency(d.sell_price) }}
+                                            {{ currency(d.harga_jual) }}
                                         </div>
-                                        <el-row :gutter="10">
-                                            <el-col :lg="12">
-                                                <a :href="route('product.show', { 'slug' : d.slug, 'grosir' : 0})" class="ep-button ep-button--primary ep-button--small w-100">Eceran</a>
-                                            </el-col>
-                                            <el-col :lg="12">
-                                                <a :href="route('product.show', { 'slug' : d.slug, 'grosir' : 1})" class="ep-button ep-button--primary ep-button--small w-100 is-plain">Grosir</a>
-                                            </el-col>
-                                        </el-row>
                                     </div>
                                 </div>
                             </div>
