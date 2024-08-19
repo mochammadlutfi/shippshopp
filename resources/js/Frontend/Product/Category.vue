@@ -3,37 +3,24 @@
         <!-- <recent-products/> -->
         <div class="content content-full">
             
-            <div class="block block-rounded block-transparent bg-primary">
-                <div class="block-content bg-black-25">
-                    <div class="py-3 text-center">
-                        <h1 class="h2 fw-bold text-white mb-2">Produk Kategori</h1>
-                        <h2 class="h5 fw-medium text-white-75">{{ data.name }}</h2>
-                    </div>
-                </div>
+            <div class="py-3 text-center">
+                <h1 class="h2 fw-bold text-white mb-2">Kategori Produk</h1>
+                <h2 class="h5 fw-medium text-white-75">{{ data.name }}</h2>
             </div>
             <el-row :gutter="20">
 
                 <el-col :lg="6">
-                    <div class="block block-rounded block-bordered">
-                        <div class="block-header block-header-default">
-                            <h3 class="block-title">Kategori</h3>
+                    <h3 class="fs-3 text-white mb-3">Daftar Kategori</h3>
+                    <a :href="route('category', { category : c.slug })" class="block block-rounded block-bordered" v-for="(c, i) in category" :key="i">
+                        <div class="block-content p-4">
+                            <h3 class="mb-0">{{ c.nama }}</h3>
                         </div>
-                        <div class="block-content">
-                            <ul class="nav-main">
-                                <li class="nav-main-item" v-for="(c, i) in category" :key="i">
-                                    <a class="nav-main-link" :href="route('category', { category : c.slug })">
-                                        <i class="nav-main-link-icon fa fa-angle-right"></i>
-                                        <span class="nav-main-link-name">{{ c.name }}</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    </a>
                 </el-col>
 
                 <el-col :lg="18">
                     <div class="content-heading pt-0 mb-3 border-0 d-flex justify-content-between">
-                        <h3 class="h3 mb-0">Produk Terbaru</h3>
+                        <h3 class="fs-3 mb-0">Produk Terbaru</h3>
                     </div>
                     <el-row :gutter="20">
                         <el-col :lg="5" v-for="(d, i) in product.data" :key="i">

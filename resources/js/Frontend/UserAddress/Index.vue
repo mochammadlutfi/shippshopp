@@ -25,14 +25,13 @@
                 <div class="content__complete-address">
                     {{ d.address }}
                 </div>
-                <!-- <div class="content__district">{{ d.area }}</div> -->
             </div>
             <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                 <a :href="route('user.address.edit', {id : d.id})" class="ep-button ep-button--primary">
                     <i class="si si-note me-1"></i>
                     Ubah
                 </a>
-                <el-button type="danger" @click.prevent="destroy(d.id)">
+                <el-button type="danger" @click.prevent="hapus(d.id)">
                     <i class="si si-trash me-1"></i>
                     Hapus
                 </el-button>
@@ -80,6 +79,26 @@ export default {
             } catch (error) {
                 console.error(error);
             }
+        },
+        hapus(id){
+            ElMessageBox.alert('Data yang dihapus tidak bisa dikembalikan!', 'Peringatan', {
+                showCancelButton: true,
+                confirmButtonText: 'Ya!',
+                cancelButtonText: 'Tidak!',
+                type: 'warning',
+            })
+            .then(() => {
+                this.$inertia.delete(this.route('user.address.delete', {id : id}), {
+                    preserveScroll: true,
+                    onSuccess: () => {
+                        this.fetchData();
+                        ElMessage({
+                            type: 'success',
+                            message: 'Data Berhasil Dihapus!',
+                        });
+                    },
+                });
+            });
         },
     },
 }

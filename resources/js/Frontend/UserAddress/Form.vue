@@ -107,7 +107,7 @@ export default {
             this.isLoading = true;
             let form = this.$inertia.form(this.form);
 
-            let url = (this.data.id) ? route('user.address.update', {id : this.data.id}) : route('user.address.store')
+            let url = (this.form.id) ? route('user.address.update', {id : this.form.id}) : route('user.address.store')
 
             form.post(url, {
                 preserveScroll: true,

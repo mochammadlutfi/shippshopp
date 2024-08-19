@@ -27,6 +27,7 @@
                                 placeholder="Masukan kata kunci"
                                 class="input-with-select"
                                 clearable
+                                @change="doSearch"
                                 >
                                 <template #prefix>
                                     <i class="fa fa-search"></i>
@@ -109,6 +110,9 @@ export default {
         await this.fetchData();
     },
     methods :{
+        doSearch : _.throttle(function(){
+            this.fetchData();
+        }, 200),
         async fetchData(page) {
             var page = (page == undefined) ? 1 : page;
             try {

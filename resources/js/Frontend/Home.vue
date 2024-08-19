@@ -32,7 +32,7 @@
             </div>
             <el-row :gutter="20" justify="center" class="mb-3">
                 <el-col :md="6" v-for="(d,i) in category" :key="i">
-                    <a class="block rounded" href="#">
+                    <a class="block rounded" :href="route('category', d.slug)">
                         <div class="block-content p-4 text-center">
                             <h2 class="mb-0 fs-lg">{{ d.nama }}</h2>
                         </div>
@@ -74,11 +74,11 @@
             <el-row :gutter="20" justify="center">
                 <el-col :md="16">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0901393228382!2d106.5424828749906!3d-6.251853093736579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fd8ddf9ee793%3A0x671c246aea1ffd23!2sShipp%20Shopp%20Vape!5e0!3m2!1sen!2sid!4v1719943100082!5m2!1sen!2sid"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1854135679187!2d106.5800059100494!3d-6.239276693722938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fd66dbceff3b%3A0x88d2608299c8215!2sshippshoppvape%20binong%20permai!5e0!3m2!1sen!2sid!4v1724054540565!5m2!1sen!2sid"
                         width="100%" height="400" class="rounded" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </el-col>
-            </el-row>
+            </el-row> 
         </div>
     </base-layout>
 </template>

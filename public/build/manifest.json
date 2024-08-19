@@ -1164,8 +1164,15 @@
     "file": "assets/Index4.js",
     "imports": [
       "_id.js",
+      "_index29.js",
+      "_index20.js",
       "_index8.js",
-      "_typescript.js"
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Frontend/UserAddress/Index.vue"

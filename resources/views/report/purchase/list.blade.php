@@ -44,7 +44,7 @@
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $a->nomor }}</td>
-                        <td>{{ $a->supplier->name }}</td>
+                        <td>{{ $a->supplier->nama }}</td>
                         <td>{{ \Carbon\Carbon::parse($a->date)->translatedFormat('d F Y') }}</td>
                         <td>{{ $a->lines_count }} Produk</td>
                         <td>Rp {{ number_format($a->total,0,',','.') }}</td>

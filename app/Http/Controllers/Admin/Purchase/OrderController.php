@@ -257,7 +257,7 @@ class OrderController extends Controller
     public function report(Request $request)
     {
         // dd($request->all());
-        $data = PurchaseOrder::with(['supplier:id,name'])
+        $data = PurchaseOrder::with(['supplier:id,nama'])
         ->withCount(['lines'])
         ->when($request->status == 'Pending', function ($q) {
             return $q->where('state', 'draft');
