@@ -36,7 +36,7 @@
                     <th>Tanggal</th>
                     <th>Jumlah Produk</th>
                     <th>Total Belanja</th>
-                    <th>Biaya Kirim</th>
+                    {{-- <th>Biaya Kirim</th> --}}
                     <th>Total Final</th>
                     <th>Status</th>
                 </tr>
@@ -53,7 +53,7 @@
                         <td>{{ \Carbon\Carbon::parse($a->date)->translatedFormat('d F Y') }}</td>
                         <td>{{ $a->lines_count }} Produk</td>
                         <td>Rp {{ number_format($a->total,0,',','.') }}</td>
-                        <td>Rp {{ number_format($a->shipping_cost,0,',','.') }}</td>
+                        {{-- <td>Rp {{ number_format($a->shipping_cost,0,',','.') }}</td> --}}
                         <td>Rp {{ number_format($a->grand_total,0,',','.') }}</td>
                         <td>
                             @if ($a->state == 'pending')

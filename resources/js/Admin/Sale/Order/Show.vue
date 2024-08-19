@@ -5,14 +5,16 @@
             <div class="content-heading d-flex justify-content-between align-items-center">
                 <span>Detail Penjualan</span>
                 <div class="space-x-1">
-                    <el-button type="primary" @click.prevent="updateState('process')" v-if="data.state == 'pending'">
-                        <i class="fa fa-check me-1"></i>
-                        Konfirmasi Pesanan
-                    </el-button>
-                    <el-button type="primary" @click.prevent="updateState('shipped')" v-else-if="data.state == 'process'">
-                        <i class="fa fa-check me-1"></i>
-                        Konfirmasi Pengiriman
-                    </el-button>
+                    <template v-if="data.payment_status == 'paid'">
+                        <el-button type="primary" @click.prevent="updateState('process')" v-if="data.state == 'pending'">
+                            <i class="fa fa-check me-1"></i>
+                            Konfirmasi Pesanan
+                        </el-button>
+                        <el-button type="primary" @click.prevent="updateState('shipped')" v-else-if="data.state == 'process'">
+                            <i class="fa fa-check me-1"></i>
+                            Konfirmasi Pengiriman
+                        </el-button>
+                    </template>
                 </div>
             </div>
             <div class="block rounded block-bordered">
