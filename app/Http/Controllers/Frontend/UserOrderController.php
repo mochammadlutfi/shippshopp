@@ -155,8 +155,12 @@ class UserOrderController extends Controller
             return $q->where('state', 'pending')
             ->where('payment_status', 'unpaid');
         })
+        ->when($request->status == 'pending', function ($q) {
+            return $q->where('state', 'pending')
+            ->where('payment_status', 'paid');
+        })
         ->when($request->status == 'process', function ($q) {
-            return $q->whereIn('state',  ['process', 'pending'])
+            return $q->whereIn('state',  'process')
             ->where('payment_status', 'paid');
         })
         ->when($request->status == 'shipped', function ($q) {
