@@ -1183,14 +1183,11 @@
       "_moment.js",
       "_id.js",
       "_index20.js",
-      "_index29.js",
       "_index21.js",
       "_index8.js",
       "_index30.js",
       "_index7.js",
       "_typescript.js",
-      "_index27.js",
-      "_scroll.js",
       "_event.js",
       "_index31.js",
       "__Uint8Array.js",
@@ -1232,9 +1229,16 @@
     "imports": [
       "_moment.js",
       "_id.js",
+      "_index29.js",
+      "_index20.js",
       "_index32.js",
       "_index8.js",
-      "_typescript.js"
+      "_index21.js",
+      "_typescript.js",
+      "_event.js",
+      "_index27.js",
+      "_scroll.js",
+      "_index7.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Frontend/UserOrder/Show.vue"

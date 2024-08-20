@@ -25,6 +25,10 @@
                     <a :href="`https://app.sandbox.midtrans.com/snap/v4/redirection/${data.payment_ref}`" class="ep-button ep-button--primary" v-if="data.payment_status == 'unpaid'">
                         Bayar Sekarang
                     </a>
+
+                    <el-button type="primary" @click.prevent="confirm(data.id)" v-if="data.status == 'shipped'">
+                    Terima Pesanan
+                    </el-button>
                 </div>
             </div>
             <div class="block-content p-3">
@@ -181,7 +185,28 @@ export default {
             form.post(this.route('user.order.test'), {
                 preserveScroll: true,
             });
-        }
+        },
+        
+        receive(id){
+            ElMessageBox.alert('Pastikan barang yang diterima sesuai dengan pesanan!', 'Peringatan', {
+                showCancelButton: true,
+                confirmButtonText: 'Pesanan Sudah Diterima!',
+                cancelButtonText: 'Batal!',
+                type: 'warning',
+            })
+            .then(() => {
+                this.$inertia.post(this.route('user.order.confirm', {id : id}), {
+                    preserveScroll: true,
+                    onSuccess: () => {
+                        this.fetchData();
+                        ElMessage({
+                            type: 'success',
+                            message: 'Pesanan Berhasil Diterima!',
+                        });
+                    },
+                });
+            });
+        },
     }
 }
 </script>

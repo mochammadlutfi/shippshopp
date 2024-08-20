@@ -181,26 +181,6 @@ export default {
                 console.error(error);
             }
         },
-        receive(id){
-            ElMessageBox.alert('Pastikan barang yang diterima sesuai dengan pesanan!', 'Peringatan', {
-                showCancelButton: true,
-                confirmButtonText: 'Pesanan Sudah Diterima!',
-                cancelButtonText: 'Batal!',
-                type: 'warning',
-            })
-            .then(() => {
-                this.$inertia.post(this.route('user.order.confirm', {id : id}), {
-                    preserveScroll: true,
-                    onSuccess: () => {
-                        this.fetchData();
-                        ElMessage({
-                            type: 'success',
-                            message: 'Pesanan Berhasil Diterima!',
-                        });
-                    },
-                });
-            });
-        },
     },
 }
 </script>
