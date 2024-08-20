@@ -15,7 +15,7 @@
                         {{ format_date(data.created_at) }}
                         <el-tag class="ml-2" type="danger" v-if="data.state == 'pending' && data.payment_status == 'unpaid'">Belum Bayar</el-tag>
                         <el-tag class="ml-2" type="warning" v-else-if="data.state == 'process'">Dikemas</el-tag>
-                        <el-tag class="ml-2" type="info" v-else-if="data.state == 'shipping'">Dikirim</el-tag>
+                        <el-tag class="ml-2" type="info" v-else-if="data.state == 'shipped'">Dikirim</el-tag>
                         <el-tag class="ml-2" type="success" v-else-if="data.state == 'done'">Selesai</el-tag>
                         <el-tag class="ml-2" type="danger" v-else-if="data.state == 'cancel'">Batal</el-tag>
                     </div>
@@ -26,7 +26,7 @@
                         Bayar Sekarang
                     </a>
 
-                    <el-button type="primary" @click.prevent="confirm(data.id)" v-if="data.status == 'shipped'">
+                    <el-button type="primary" @click.prevent="receive(data.id)" v-if="data.state == 'shipped'">
                     Terima Pesanan
                     </el-button>
                 </div>
@@ -53,7 +53,7 @@
                                     {{ d.product.nama }}
                                 </div>
                                 <div class="product_price">
-                                    {{ d.qty }} x {{ currency(d.price) }}
+                                    {{ d.qty }} x {{ currency(d.harga) }}
                                 </div>
                             </div>
                         </div>
