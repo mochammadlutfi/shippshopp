@@ -48,7 +48,10 @@ class LoginController extends Controller
      */
     public function index()
     {
-        Redirect::setIntendedUrl(url()->previous());
+        // Redirect::setIntendedUrl(route('home'));
+        if(auth()->guard('web')->check()){
+            return redirect()->route('home');
+        }
 
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
@@ -91,7 +94,7 @@ class LoginController extends Controller
         }else{
             if(auth()->guard('web')->attempt(array('email' => $input['email'], 'password' => $input['password']), true))
             {
-                return redirect()->intended(RouteServiceProvider::HOME);
+                return redirect()->route('home');
             }else{
                 $gagal['password'] = array('Password salah!');
                 return back()->withErrors($gagal);

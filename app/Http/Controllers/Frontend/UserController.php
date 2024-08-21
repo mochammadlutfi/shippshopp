@@ -90,41 +90,42 @@ class UserController extends Controller
                 return back();
             }
             DB::commit();
-            return redirect()->route('user.settings.profile');
+            return redirect()->route('user.profil');
         }
     }
 
     public function updatePassword(Request $request)
     {
         $rules = [
-            'password' => 'required|min:6',
+            'password_old' => 'required',
+            'password_new' => 'required',
+            'password_confirmation' => 'required',
         ];
 
         $pesan = [
-            'password.required' => 'Password wajib diisi',
-            'password.min' => 'Password kurang dari 6 karakter!',
+            'password_old.required' => 'Password Lama wajib diisi',
+            'password_new.required' => 'Password Baru wajib diisi',
+            'password_confirmation.required' => 'Konfirmasi Password Baru wajib diisi',
+            'password_old.min' => 'Password Lama kurang dari 6 karakter',
+            'password_new.min' => 'Password Baru kurang dari 6 karakter',
+            'password_confirmation.min' => 'Konfirmasi Password kurang dari 6 karakter',
         ];
 
         $validator = Validator::make($request->all(), $rules, $pesan);
         if ($validator->fails()){
-            return response()->json([
-                'success'=> false,
-                'message' => $validator->errors()
-            ]);
+            return back()->withErrors($validator->errors());
         }else{
-            $user = User::where('email', auth()->guard('web')->user()->email)->first();
+            $user = User::where('id', auth()->guard('web')->user()->id)->first();
 
-            if (!Hash::check($request->password, $user->password)) {
-                $error['password'] = array('Password salah!');
-                return response()->json([
-                    'success'=> false,
-                    'message' => $error
-                ]);
-             }
-            return response()->json([
-                'success' => true, 
-                'message'=>'success'
-            ]);
+            if (!Hash::check($request->password_old, $user->password)) {
+                $error['password_old'] = array('Password Lama salah!');
+                return back()->withErrors($error);
+            }else
+
+            $user->password = Hash::make($request->password_new);
+            $user->save();
+
+            return redirect()->route('home');
         }
     }
 

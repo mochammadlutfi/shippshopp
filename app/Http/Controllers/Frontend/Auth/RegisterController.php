@@ -28,6 +28,10 @@ class RegisterController extends Controller
 
     public function index()
     {
+        if(auth()->guard('web')->check()){
+            return redirect()->route('home');
+        }
+        
         return Inertia::render('Auth/Register');
     }
 

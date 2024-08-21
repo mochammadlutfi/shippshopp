@@ -1142,6 +1142,23 @@
     "isDynamicEntry": true,
     "src": "resources/js/Frontend/User/Index.vue"
   },
+  "resources/js/Frontend/User/Password.vue": {
+    "file": "assets/Password.js",
+    "imports": [
+      "_id.js",
+      "_index20.js",
+      "_index21.js",
+      "_index22.js",
+      "_index8.js",
+      "_index7.js",
+      "_typescript.js",
+      "_event.js",
+      "__Uint8Array.js",
+      "__initCloneObject.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Frontend/User/Password.vue"
+  },
   "resources/js/Frontend/UserAddress/Form.vue": {
     "file": "assets/Form.js",
     "imports": [
@@ -1370,6 +1387,7 @@
       "resources/js/Frontend/Product/RecentProducts.vue",
       "resources/js/Frontend/Product/Show.vue",
       "resources/js/Frontend/User/Index.vue",
+      "resources/js/Frontend/User/Password.vue",
       "resources/js/Frontend/UserAddress/Form.vue",
       "resources/js/Frontend/UserAddress/Index.vue",
       "resources/js/Frontend/UserOrder/Index.vue",

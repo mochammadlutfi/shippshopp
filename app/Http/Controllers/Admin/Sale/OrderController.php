@@ -195,7 +195,7 @@ class OrderController extends Controller
     {
         $data = SaleOrder::with(['lines' => function($q){
             $q->with(['product']);
-        }, 'customer'])
+        }, 'customer', 'shipping'])
         ->where('id', $id)->first();
 
         return Inertia::render('Sale/Order/Show',[

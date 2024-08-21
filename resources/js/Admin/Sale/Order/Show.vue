@@ -76,7 +76,7 @@
                                 <el-col :lg="16">
                                     <div class="fw-semibold">{{ data.customer.name }}</div>
                                 </el-col>
-                            </el-row>
+                            </el-row> 
                             <el-row class="mb-2" :gutter="10" v-if="data.shipping">
                                 <el-col :lg="8">Alamat Pengiriman</el-col>
                                 <el-col :lg="16">
