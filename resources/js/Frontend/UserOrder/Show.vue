@@ -37,7 +37,10 @@
                         <h5 class="fw-semibold fs-6 mb-2">Info Pengiriman</h5>
                         <div class="fw-bold">{{ data.shipping.reciever }}</div>
                         <div class="">{{ data.shipping.phone }}</div>
-                        <address>{{ data.shipping.address }}</address>
+                        <address>{{ data.shipping.address }}
+                            <br/>
+                            {{ data.shipping.city.name }}, {{ data.shipping.province.name }}
+                        </address>
                     </el-col>
                 </el-row>
             </div>
@@ -69,6 +72,14 @@
                         </div>
                         <div class="col-val">
                             <div>{{ currency(data.total) }}</div>
+                        </div>
+                    </div>
+                    <div class="order-row">
+                        <div class="col-title">
+                            <span>Biaya Kirim</span>
+                        </div>
+                        <div class="col-val">
+                            <div>{{ currency(data.shipping_cost) }}</div>
                         </div>
                     </div>
                     <div class="order-row">

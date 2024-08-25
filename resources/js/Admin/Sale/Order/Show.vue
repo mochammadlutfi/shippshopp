@@ -85,6 +85,12 @@
                                     {{ data.shipping.address }}<br>
                                 </el-col>
                             </el-row>
+                            <el-row class="mb-2" :gutter="10">
+                                <el-col :lg="8">Kurir</el-col>
+                                <el-col :lg="16">
+                                    <div class="fw-semibold">{{ data.shipping_service }} ({{ data.shipping_etd }})</div>
+                                </el-col>
+                            </el-row> 
                         </el-col>
                     </el-row>
                 </div>
@@ -117,10 +123,10 @@
                                 <div class="fs-6 fw-semibold">Total</div>
                                 <div class="fs-6 fw-bold text-end w-50">{{ currency(data.total) }}</div>
                             </div>
-                            <!-- <div class="d-flex float-end justify-content-end w-75 mb-2">
+                            <div class="d-flex float-end justify-content-end w-75 mb-2">
                                 <div class="fs-6 fw-semibold">Biaya Kirim</div>
                                 <div class="fs-6 fw-bold text-end w-50">{{ currency(data.shipping_cost) }}</div>
-                            </div> -->
+                            </div>
                             <div class="d-flex float-end justify-content-end w-75 pt-2 mb-2 border-top border-2">
                                 <div class="fs-5 fw-semibold">Total Belanja</div>
                                 <div class="fs-5 fw-bold text-end w-50">{{ currency(data.grand_total) }}</div>

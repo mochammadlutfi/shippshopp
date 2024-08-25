@@ -36,6 +36,41 @@
                                 <i class="fa fa-angle-small-up"></i>
                             </template>
                         </div>
+                        <div class="block-content p-3 text-center border-top border-bottom border-2">
+                            <el-row :gutter="20">
+                                <el-col :span="12">
+                                    <el-select v-model="kurir" placeholder="Pilih Kurir" class="w-100" @change="getOngkir">
+                                        <el-option key="jne" label="JNE" value="jne">JNE</el-option>
+                                        <el-option key="pos" label="POS" value="pos">POS</el-option>
+                                        <el-option key="tiki" label="TIKI" value="tiki">TIKI</el-option>
+                                    </el-select>
+                                </el-col>
+                                <el-col :span="12">
+                                    <el-select v-model="ongkir" value-key="service" placeholder="Pilih Layanan" class="w-100" :disabled="!layanan.length" @change="selectKurir">
+                                        
+                                        <template #label="{ label, value }">
+                                            <span>{{ label }}  ({{ value.etd }}) : </span>
+                                            <span style="font-weight: bold">{{ currency(value.cost) }}</span>
+                                        </template>
+
+                                            <el-option
+                                            v-for="d in layanan"
+                                            :key="d.service"
+                                            :label="d.service"
+                                            :value="d"
+                                            >
+                                            <span>{{ d.service }} - {{ d.etd}}</span>
+                                            <span 
+                                                style="
+                                                float: right;
+                                                color: var(--el-text-color-secondary);
+                                                font-size: 13px;
+                                                ">{{ currency(d.cost) }}</span>
+                                        </el-option>
+                                    </el-select>
+                                </el-col>
+                            </el-row>
+                        </div>
                     </div>
                 </el-col>
                 <el-col :lg="8">
@@ -48,13 +83,18 @@
                                 <div class="fs-6">Total Harga ({{ cart.length }} barang)</div>
                                 <div class="fs-6 fw-bold">{{ currency(totalHarga) }}</div>
                             </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="fs-6">Biaya Kirim</div>
+                                <div class="fs-6 fw-bold">{{ currency(ongkir ? ongkir.cost : 0) }}</div>
+                            </div>
                         </div>
                         <div class="block-content p-4 border-top border-2x">
                             <div class="d-flex justify-content-between mb-3">
                                 <div class="fs-5">Total Belanja</div>
-                                <div class="fs-5 fw-bold">{{ currency(totalHarga) }}</div>
+                                <div class="fs-5 fw-bold">{{ currency(grandTotal) }}</div>
                             </div>
-                            <el-button type="primary" size="large" class="w-100" @click="payment">
+                            <el-button type="primary" size="large" class="w-100" @click="payment"
+                            :disabled="disablePayment">
                                 Lanjut Ke Pembayaran
                             </el-button>
                         </div>
@@ -83,6 +123,9 @@ export default {
             selectAll : false,
             address : {},
             showAll : true,
+            kurir : null,
+            ongkir : null,
+            layanan: [],
         }
     },
     computed :{
@@ -99,6 +142,17 @@ export default {
                 total += value.harga * value.qty;
             });
             return total;
+        },
+        grandTotal () {
+            var ongkir = (this.ongkir) ? this.ongkir.cost : 0;
+            return this.totalHarga + ongkir;
+        },
+        disablePayment(){
+            if(this.ongkir){
+                return false;
+            }
+
+            return true;
         }
     },
     watch : {
@@ -127,8 +181,12 @@ export default {
             const form = this.$inertia.form({
                 lines : this.cart,
                 address_id : this.address.id,
-                shipping_cost : 0,
-                total : this.totalHarga
+                shipping_cost : this.ongkir.cost,
+                shipping_service : this.ongkir.service,
+                shipping_courirer : this.kurir,
+                shipping_etd : this.ongkir.etd,
+                total : this.totalHarga,
+                grand_total : this.grandTotal,
             });
 
             form.post(this.route('checkout.store'), {
@@ -137,25 +195,41 @@ export default {
                 },
             });
         },
-        // async payment(){
-        //     try {
-        //         const vm = this;
-        //         this.isLoading = true;
-        //         const response = await axios.post(this.route('checkout.store'),{
-        //             lines : this.cart,
-        //             address_id : this.address.id,
-        //             shipping_cost : this.shippingCost,
-        //             total : this.totalHarga
-        //         });
-        //         if(response.status == 200){
-        //             const data = response.data;
-                    
-        //         }
-        //         this.isLoading = false;
-        //     } catch (error) {
-        //         console.error(error);
-        //     }
-        // },
+        async getOngkir(){
+            try {
+                const vm = this;
+                this.layanan = [];
+                this.ongkir = null;
+                this.isLoading = true;
+                const response = await axios.post(this.route('checkout.ongkir'),{
+                    city_id : this.address.city_id,
+                    kurir : this.kurir,
+                    weight: 900
+                });
+                if(response.status == 200){
+                    const data = response.data;
+                    this.layanan = [];
+                    console.log(data[0]);
+                    data[0].costs.forEach((v, i) => {
+                        // if(v1 === v2.id){
+                        //     qty += v2.qty;
+                        // }
+                        // console.log(v);
+                        this.layanan.push({
+                            service : v.service,
+                            cost : v.cost[0].value,
+                            etd : v.cost[0].etd.replace(' HARI','') + ' hari'
+                        });
+                    });
+                    // $.each(response[0]['costs'], function (key, value) {
+                    //         $('#ongkir').append('<li class="list-group-item">'+response[0].code.toUpperCase()+' : <strong>'+value.service+'</strong> - Rp. '+value.cost[0].value+' ('+value.cost[0].etd+' hari)</li>')
+                    //     });
+                }
+                this.isLoading = false;
+            } catch (error) {
+                console.error(error);
+            }
+        },
         async getAddress(){
             try {
                 this.isLoading = true;
@@ -171,6 +245,9 @@ export default {
             } catch (error) {
                 console.error(error);
             }
+        },
+        selectKurir(d){
+            console.log(d);
         },
         async updatePayment(status, id){
             try {

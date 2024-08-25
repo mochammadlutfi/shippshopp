@@ -73,6 +73,7 @@ Route::namespace('Frontend')->group(function(){
         Route::name('checkout.')->prefix('checkout')->group(function () {
             Route::match(['get', 'post'], '/shipment','CheckoutController@index')->name('shipping');
             Route::match(['get', 'post'], '/payment','CheckoutController@payment')->name('payment');
+            Route::post('/ongkir','CheckoutController@ongkir')->name('ongkir');
             Route::post('/store','CheckoutController@store')->name('store');
             Route::post('/{id}/state','CheckoutController@state')->name('state');
         });

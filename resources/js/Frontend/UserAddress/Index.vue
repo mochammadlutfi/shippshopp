@@ -23,7 +23,8 @@
                     <span class="top-info__phone">{{ d.phone }}</span>
                 </div>
                 <div class="content__complete-address">
-                    {{ d.address }}
+                    {{ d.address }} <br/>
+                    {{ d.city.name }} , {{ d.province.name }}
                 </div>
             </div>
             <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">

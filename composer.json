@@ -9,6 +9,7 @@
         "alexpechkarev/google-maps": "^10.0",
         "carlos-meneses/laravel-mpdf": "^2.1",
         "cviebrock/eloquent-sluggable": "^9.0",
+        "dipantry/rajaongkir": "^2.2",
         "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.6.10",

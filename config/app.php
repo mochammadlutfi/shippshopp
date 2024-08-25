@@ -188,6 +188,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class,
         Mccarlosen\LaravelMpdf\LaravelMpdfServiceProvider::class,
+        Dipantry\Rajaongkir\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -217,6 +218,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'GoogleMaps' => GoogleMaps\Facade\GoogleMapsFacade::class,
         'PDF' => Mccarlosen\LaravelMpdf\Facades\LaravelMpdf::class,
+        'Rajaongkir' => Dipantry\Rajaongkir\Facade::class,
     ])->toArray(),
 
 ];

@@ -59,6 +59,8 @@ class UserAddressController extends Controller
             'reciever' => 'required',
             'phone' => 'required',
             'address' => 'required',
+            'province_id' => 'required',
+            'city_id' => 'required'
         ];
 
         $pesan = [
@@ -66,6 +68,8 @@ class UserAddressController extends Controller
             'reciever.required' => 'Nama Penerima Wajib Diisi!',
             'phone.required' => 'No Handphone Penerima Wajib Diisi!',
             'address.required' => 'Alamat Lengkap Wajib Diisi!',
+            'province_id.required' => 'Provinsi Wajib Diisi!',
+            'city_id.required' => 'Kota/Kabupaten Wajib Diisi!',
         ];
 
         $validator = Validator::make($request->all(), $rules, $pesan);
@@ -88,6 +92,8 @@ class UserAddressController extends Controller
                 $data->phone = $request->phone;
                 $data->address = $request->address;
                 $data->is_main = $request->is_main;
+                $data->province_id = $request->province_id;
+                $data->city_id = $request->city_id;
                 $data->save();
 
             }catch(\QueryException $e){
@@ -119,8 +125,9 @@ class UserAddressController extends Controller
             'name' => 'required',
             'reciever' => 'required',
             'phone' => 'required',
-            'reciever' => 'required',
             'address' => 'required',
+            'province_id' => 'required',
+            'city_id' => 'required'
         ];
 
         $pesan = [
@@ -128,6 +135,8 @@ class UserAddressController extends Controller
             'reciever.required' => 'Nama Penerima Wajib Diisi!',
             'phone.required' => 'No Handphone Penerima Wajib Diisi!',
             'address.required' => 'Alamat Lengkap Wajib Diisi!',
+            'province_id.required' => 'Provinsi Wajib Diisi!',
+            'city_id.required' => 'Kota/Kabupaten Wajib Diisi!',
         ];
 
         $validator = Validator::make($request->all(), $rules, $pesan);
@@ -143,6 +152,8 @@ class UserAddressController extends Controller
                     $data->phone = $request->phone;
                     $data->address = $request->address;
                     $data->is_main = $request->is_main;
+                    $data->province_id = $request->province_id;
+                    $data->city_id = $request->city_id;
                     $data->save();
 
             }catch(\QueryException $e){
@@ -165,6 +176,7 @@ class UserAddressController extends Controller
 
         $user_id = auth()->guard('web')->user()->id;
         $query = UserAddress::where('user_id', $user_id)
+        ->with(['province', 'city'])
         ->when($request->search, function($query, $search){
             $query->where('name', 'LIKE', '%' . $search . '%')
             ->orWhere('address', 'LIKE', '%' . $search . '%')
@@ -264,6 +276,8 @@ class UserAddressController extends Controller
             'reciever' => 'required',
             'phone' => 'required',
             'address' => 'required',
+            'province_id' => 'required',
+            'city_id' => 'required'
         ];
 
         $pesan = [
@@ -271,6 +285,8 @@ class UserAddressController extends Controller
             'reciever.required' => 'Nama Penerima Wajib Diisi!',
             'phone.required' => 'No Handphone Penerima Wajib Diisi!',
             'address.required' => 'Alamat Lengkap Wajib Diisi!',
+            'province_id.required' => 'Provinsi Wajib Diisi!',
+            'city_id.required' => 'Kota/Kabupaten Wajib Diisi!',
         ];
 
         $validator = Validator::make($request->all(), $rules, $pesan);
@@ -296,8 +312,8 @@ class UserAddressController extends Controller
                 $data->phone = $request->phone;
                 $data->address = $request->address;
                 $data->is_main = $request->is_main;
-                $data->lat = $request->lat;
-                $data->lng = $request->lng;
+                $data->province_id = $request->province_id;
+                $data->city_id = $request->city_id;
                 $data->save();
 
             }catch(\QueryException $e){

@@ -16,6 +16,8 @@ use App\Models\Sale\SaleOrderLine;
 
 use Carbon\Carbon;
 use Midtrans\Notification;
+use Dipantry\Rajaongkir\Constants\RajaongkirCourier;
+use Rajaongkir;
 class CheckoutController extends Controller
 {
     public function __construct()
@@ -88,6 +90,9 @@ class CheckoutController extends Controller
             $data->delivery_id = $request->address_id;
             $data->total = $request->total;
             $data->shipping_cost = $request->shipping_cost;
+            $data->shipping_service = $request->shipping_service;
+            $data->shipping_courier = $request->shipping_courier;
+            $data->shipping_etd = $request->shipping_etd;
             $data->grand_total = $request->total + $request->shipping_cost;
             $data->state = 'pending';
             $data->payment_status = 'unpaid';
@@ -212,4 +217,14 @@ class CheckoutController extends Controller
         return redirect()->route('user.order.show', $id);
     }
 
+    public function ongkir(Request $request)
+    {
+        $data = Rajaongkir::getOngkirCost(
+            $origin = 455, $destination = $request->city_id, $weight = 900, $courier = $request->kurir
+        );
+
+        return response()->json($data,200);
+
+
+    }
 }

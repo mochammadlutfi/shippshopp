@@ -5,11 +5,10 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-
-use App\Models\Wilayah\Kelurahan;
-use App\Models\Wilayah\Kecamatan;
-use App\Models\Wilayah\Kota;
-use App\Models\Wilayah\Provinsi;
+use Dipantry\Rajaongkir\Models\ROProvince;
+use Dipantry\Rajaongkir\Models\ROCity;
+use Dipantry\Rajaongkir\Models\ROSubDistrict;
+use Dipantry\Rajaongkir\Models\ROCountry;
 use App\Models\Dapil;
 
 
@@ -44,20 +43,20 @@ class BaseController extends Controller
         $search = $request->search;
         $parent_id = $request->parent;
         $filter = !empty($request->filter) ? explode(',', $request->filter) : [];
-        // dd($filter);
-        // dd()
 
         $id = $request->id;
         if($type == 'provinsi'){
-            $data = Provinsi::orderBy('nama', 'ASC')->get();
+            $data = ROProvince::orderBy('name', 'ASC')->get();
         }elseif($type == 'kota'){
-            $data = Kota::orderBy('nama', 'ASC')
+            $data = ROCity::orderBy('name', 'ASC')
+            ->when($parent_id, function($query, $parent_id){
+                $query->where('province_id', $parent_id);
+            })
             ->when($request->id, function($query, $id){
                 $query->where('id', $id);
-            })
-            ->wherein('id', ['32.73', '32.77'])->get();
+            })->get();
         }elseif($type == 'kecamatan'){
-            $data = kecamatan::
+            $data = ROSubDistrict::
             when($parent_id, function($query, $parent_id){
                 $query->where('kota_id', $parent_id);
             })
@@ -66,9 +65,9 @@ class BaseController extends Controller
             })
             ->when($request->id, function($query, $id){
                 $query->where('id', $id);
-            })->orderBy('nama', 'ASC')->get();
+            })->orderBy('name', 'ASC')->get();
         }else{
-            $data = kelurahan::
+            $data = ROCountry::
             when($parent_id, function($query, $parent_id){
                 $query->where('kecamatan_id', $parent_id);
             })

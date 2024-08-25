@@ -9,6 +9,19 @@
                     <div class="block rounded">
                         <div class="block-content p-4">
                             <el-form label-position="top" label-width="100%" @submit.prevent="submit">
+                                <el-row :gutter="20">
+                                    <el-col :span="12">
+                                        <el-form-item label="Provinsi" :error="errors.province_id">
+                                            <select-daerah type="provinsi" v-model="form.province_id"/>
+                                        </el-form-item>
+                                    </el-col>
+                                    <el-col :span="12">
+                                        <el-form-item label="Kota/Kabupaten" :error="errors.city_id">
+                                            <select-daerah type="kota" v-model="form.city_id" hasParent 
+                                            :parent="form.province_id" />
+                                        </el-form-item>
+                                    </el-col>
+                                </el-row>
                                 <el-form-item label="Alamat Lengkap" :error="errors.phone">
                                     <el-input v-model="form.address" type="textarea" :rows="2"
                                         placeholder="Masukan Alamat" />
@@ -51,10 +64,10 @@
 
 <script>
 import { defineComponent, ref, computed, watch } from 'vue';
-
+import SelectDaerah from '@/Components/SelectDaerah.vue';
 export default {
     components : {
-
+        SelectDaerah
     },
     setup() {
 
@@ -71,6 +84,8 @@ export default {
                 id : null,
                 name : null,
                 reciever : null,
+                city_id : null,
+                province_id : null,
                 phone : null,
                 address : null,
                 is_main : 0,
@@ -102,6 +117,8 @@ export default {
             this.form.phone = this.data.phone;
             this.form.address = this.data.address;
             this.form.is_main = this.data.is_main;
+            this.form.province_id = this.data.province_id;
+            this.form.city_id = this.data.city_id;
         },
         submit() {
             this.isLoading = true;

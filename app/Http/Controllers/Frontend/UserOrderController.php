@@ -42,7 +42,9 @@ class UserOrderController extends Controller
         $data = SaleOrder::with([
             'lines' => function($q){
                 return $q->with(['product']);
-            }, 'customer', 'shipping'
+            }, 'customer', 'shipping'=> function($q){
+                return $q->with(['province', 'city']);
+            }
         ])
         ->where('id', $id)->first();
 
@@ -60,7 +62,9 @@ class UserOrderController extends Controller
         $data = SaleOrder::with([
             'lines' => function($q){
                 return $q->with(['product']);
-            }, 'customer', 'shipping'
+            }, 'customer', 'shipping' => function($q){
+                return $q->with(['province', 'city']);
+            }
         ])
         ->where('id', $request->id)->first();
 
